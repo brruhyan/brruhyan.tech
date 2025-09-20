@@ -13,6 +13,7 @@
   <div class="header-right">
     <a href="#about">about</a>
     <a href="#works">works</a>
+    <a href="#contact">contact</a>
   </div>
 </div>
 
@@ -143,42 +144,45 @@
   </div>
 </section>
 
-<!-- Other Projects Section -->
-<section class="other-projects-section animate-section">
-  <div class="technologies-title animate-title">Other Projects</div>
-  <div class="other-projects-container">
-    <!-- Project 1 - Mental Health Platform -->
-    <div class="other-project-item animate-project" style="animation-delay: 0.1s">
-      <div class="other-project-image">
-        <img src="./Images/mental-health-app.png" alt="Mental Health Platform" class="other-project-img">
+<!-- Contact Section -->
+<section class="contact-section animate-section" id="contact">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h2 class="contact-title">Let's work together</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <a href="mailto:bryanpaul.careers@gmail.com" class="contact-link">
+            <span class="contact-icon">✉️</span>
+            <span class="contact-text">Email</span>
+          </a>
+        </div>
+        <div class="contact-item">
+          <a href="https://www.linkedin.com/in/bpadl/" target="_blank" class="contact-link">
+            <span class="contact-icon">🔗</span>
+            <span class="contact-text">LinkedIn</span>
+          </a>
+        </div>
+        <div class="contact-item">
+          <a href="https://github.com/brruhyan" target="_blank" class="contact-link">
+            <span class="contact-icon">⚡</span>
+            <span class="contact-text">GitHub</span>
+          </a>
+        </div>
       </div>
-      <div class="other-project-tags">
-        <span class="other-project-tag">Data Visualization</span>
-        <span class="other-project-tag">Group Project</span>
-        <span class="other-project-tag">2023</span>
-      </div>
-      <h3 class="other-project-title">Mental Health Platform</h3>
-      <p class="other-project-description">
-        Designing an application aimed at assisting users in managing their emotions effectively by using a range of immersive tools and technologies to monitor and gather the data, and helping them to improve their emotional well being.
-      </p>
-      <button class="other-project-button">Coming Soon</button>
     </div>
-
-    <!-- Project 2 - Research on menstruation -->
-    <div class="other-project-item animate-project" style="animation-delay: 0.3s">
-      <div class="other-project-image">
-        <img src="./Images/research-menstruation.png" alt="Research on menstruation" class="other-project-img">
-      </div>
-      <div class="other-project-tags">
-        <span class="other-project-tag">System Design</span>
-        <span class="other-project-tag">Group Project</span>
-        <span class="other-project-tag">2019</span>
-      </div>
-      <h3 class="other-project-title">Research on menstruation</h3>
-      <p class="other-project-description">
-        Examining and comprehending the comprehensive effects of menstruation on both girls and the environment, with the goal of addressing associated challenges at system level.
-      </p>
-      <button class="other-project-button">Coming Soon</button>
+    
+    <div class="contact-right">
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@yourcompany.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="What's on your mind?" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="contact-submit">Send me a message</button>
+      </form>
     </div>
   </div>
 </section>
