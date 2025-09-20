@@ -205,5 +205,49 @@ document.addEventListener('DOMContentLoaded', function() {
             closeProjectModal();
         });
     });
+
+    // Dynamic name scaling function - DISABLED in favor of CSS clamp()
+    /*
+    function scaleName() {
+        const nameElement = document.querySelector('#main-name span');
+        if (!nameElement) {
+            console.log('Name element not found');
+            return;
+        }
+        
+        const container = nameElement.closest('.hero-section');
+        if (!container) {
+            console.log('Container not found');
+            return;
+        }
+        
+        // Get container width minus padding
+        const containerWidth = Math.min(container.offsetWidth - 60, window.innerWidth - 60); // More conservative padding
+        
+        // Start with a reasonable font size based on screen width
+        let fontSize = Math.max(Math.min(containerWidth * 0.08, 80), 24); // Between 24px and 80px
+        nameElement.style.fontSize = fontSize + 'px';
+        nameElement.style.visibility = 'visible'; // Ensure it's visible
+        nameElement.style.opacity = '1'; // Ensure it's not transparent
+        
+        // Keep reducing font size until the text fits, but don't go below 18px
+        let attempts = 0;
+        while (nameElement.scrollWidth > containerWidth && fontSize > 18 && attempts < 20) {
+            fontSize -= 1;
+            nameElement.style.fontSize = fontSize + 'px';
+            attempts++;
+        }
+        
+        console.log(`Name scaled to ${fontSize}px for container width ${containerWidth}px, element width: ${nameElement.scrollWidth}px`);
+    }
+    
+    // Scale name on load and resize with delay to ensure DOM is ready
+    setTimeout(scaleName, 100);
+    window.addEventListener('resize', function() {
+        setTimeout(scaleName, 50);
+    });
+    window.addEventListener('orientationchange', function() {
+        setTimeout(scaleName, 200); // Longer delay for orientation change
+    });
+    */
 });
-/* Main name styles for hero section (not fixed) */
