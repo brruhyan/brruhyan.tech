@@ -1,13 +1,3 @@
-/* Global overflow prevention */
-* {
-  max-width: 100vw;
-  box-sizing: border-box;
-}
-
-html {
-  overflow-x: hidden;
-}
-
 /* Hero Section styles */
 .hero-section {
     min-height: 70vh;
@@ -188,7 +178,7 @@ body {
     box-sizing: border-box;
 }
 .main-name span {
-    font-size: 120px; /* Fallback for JavaScript */
+    font-size: 14vw;
     font-weight: bold;
     color: #111;
     letter-spacing: -0.05em;
@@ -907,6 +897,7 @@ body {
   }
   
   .main-name span {
+    font-size: clamp(1.5rem, 6vw, 10vw);
     word-break: break-word;
     hyphens: auto;
     max-width: 100%;
@@ -915,8 +906,7 @@ body {
     text-align: center;
     width: 100%;
     overflow-wrap: break-word;
-    white-space: nowrap;
-    font-size: 60px; /* Fallback for JavaScript */
+    white-space: normal;
   }
   
   .main-name {

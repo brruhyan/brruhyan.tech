@@ -205,35 +205,4 @@ document.addEventListener('DOMContentLoaded', function() {
             closeProjectModal();
         });
     });
-
-    // Dynamic name scaling function
-    function scaleName() {
-        const nameElement = document.querySelector('#main-name span');
-        if (!nameElement) return;
-        
-        const container = nameElement.closest('.intro-text');
-        if (!container) return;
-        
-        // Get container width minus padding
-        const containerWidth = container.offsetWidth - 30; // 15px padding on each side
-        
-        // Start with a large font size and scale down until it fits
-        let fontSize = Math.min(containerWidth * 0.12, 120); // Start with 12% of container width or 120px max
-        nameElement.style.fontSize = fontSize + 'px';
-        
-        // Keep reducing font size until the text fits in one line
-        while (nameElement.scrollWidth > containerWidth && fontSize > 20) {
-            fontSize -= 2;
-            nameElement.style.fontSize = fontSize + 'px';
-        }
-        
-        console.log(`Name scaled to ${fontSize}px for container width ${containerWidth}px`);
-    }
-    
-    // Scale name on load and resize
-    scaleName();
-    window.addEventListener('resize', scaleName);
-    window.addEventListener('orientationchange', function() {
-        setTimeout(scaleName, 100); // Small delay for orientation change
-    });
 });
