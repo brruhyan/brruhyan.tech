@@ -1200,18 +1200,18 @@ video.gallery-image.active {
   
   .hero-section {
     padding: 0;
-    padding-top: 15vh;
-    padding-bottom: 8vh;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
     overflow: visible;
     width: 100vw;
     max-width: 100vw;
     box-sizing: border-box;
-    min-height: 100vh;
+    min-height: 90vh;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
   }
   
   .intro-text {
@@ -1259,8 +1259,8 @@ video.gallery-image.active {
   
   .technologies-section {
     padding: 0 15px;
-    margin-top: 15vh;
-    margin-bottom: 40px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
     width: 100%;
     max-width: 100vw;
     box-sizing: border-box;
@@ -1282,7 +1282,7 @@ video.gallery-image.active {
   
   .logos-scroll {
     gap: 50px;
-    animation: scroll-logos 8s linear infinite;
+    animation: scroll-logos 5s linear infinite !important;
   }
   
   .technology-logo-img {
@@ -1291,22 +1291,20 @@ video.gallery-image.active {
   }
   
   .experiences-section {
-    padding: 40px 15px;
+    padding: 5vh 15px;
     width: 100%;
     max-width: 100vw;
     box-sizing: border-box;
   }
-  
+
   .experiences-container {
     max-width: calc(100vw - 30px);
     margin: 0 auto;
   }
 
   .portfolio-section {
-    padding: 40px 20px;
-  }
-  
-  .portfolio-container {
+    padding: 5vh 20px;
+  }  .portfolio-container {
     gap: 60px;
   }
   
@@ -1349,7 +1347,7 @@ video.gallery-image.active {
 
   /* Contact Mobile Styles */
   .contact-section {
-    padding: 60px 20px;
+    padding: 5vh 20px;
   }
   
   .contact-container {
