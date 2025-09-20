@@ -206,3 +206,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+/* Main name styles for hero section (not fixed) */
