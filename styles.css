@@ -1282,6 +1282,7 @@ video.gallery-image.active {
   
   .logos-scroll {
     gap: 50px;
+    animation: scroll-logos 12s linear infinite;
   }
   
   .technology-logo-img {
