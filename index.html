@@ -13,7 +13,6 @@
   <div class="header-right">
     <a href="#about">about</a>
     <a href="#works">works</a>
-    <a href="#certifications">certifications</a>
   </div>
 </div>
 
@@ -23,7 +22,7 @@
     <p> A tech-savvy individual driven by lifelong learning, specializing in intelligent systems with proven expertise in designing robust software architectures.</p>
   </div>
   <div class="main-name" id="main-name">
-    <span class="name-text" id="name-text"> Bryan Paul</span>
+    <span class="name-text" id="name-text"> Bryan Paul de Leon</span>
   </div>
 </section>
 
@@ -31,11 +30,28 @@
 <section class="technologies-section animate-section" id="about">
   <div class="technologies-title animate-title"> My Tech Stack </div>
   <div class="technologies-logos">
-  <img class="technology-logo-img animate-logo" src="./Images/laravel-logo.png" alt="Tech 1" style="animation-delay: 0.1s">
-  <img class="technology-logo-img animate-logo" src="./Images/Docker.png" alt="Tech 2" style="animation-delay: 0.2s">
-  <img class="technology-logo-img animate-logo" src="./Images/amazon_logo.png" alt="Tech 3" style="animation-delay: 0.3s">
-  <img class="technology-logo-img animate-logo" src="./Images/jenkins-icon.png" alt="Tech 4" style="animation-delay: 0.4s">
-  <img class="technology-logo-img animate-logo" src="./Images/python.png" alt="Tech 5" style="animation-delay: 0.5s">
+    <div class="logos-scroll">
+      <img class="technology-logo-img animate-logo" src="./Images/laravel-logo.png" alt="Laravel" style="animation-delay: 0.1s">
+      <img class="technology-logo-img animate-logo" src="./Images/Docker.png" alt="Docker" style="animation-delay: 0.2s">
+      <img class="technology-logo-img animate-logo" src="./Images/amazon_logo.png" alt="AWS" style="animation-delay: 0.3s">
+      <img class="technology-logo-img animate-logo" src="./Images/jenkins-icon.png" alt="Jenkins" style="animation-delay: 0.4s">
+      <img class="technology-logo-img animate-logo" src="./Images/python.png" alt="Python" style="animation-delay: 0.5s">
+      <img class="technology-logo-img animate-logo" src="./Images/JS.png" alt="JavaScript" style="animation-delay: 0.5s">
+      <img class="technology-logo-img animate-logo" src="./Images/arduino.png" alt="Arduino" style="animation-delay: 0.5s">
+      <img class="technology-logo-img animate-logo" src="./Images/raspberry-pi-logo-png-transparent.png" alt="Raspberry Pi" style="animation-delay: 0.5s">
+
+      <!-- Duplicate for seamless loop -->
+      <img class="technology-logo-img animate-logo" src="./Images/laravel-logo.png" alt="Laravel">
+      <img class="technology-logo-img animate-logo" src="./Images/Docker.png" alt="Docker">
+      <img class="technology-logo-img animate-logo" src="./Images/amazon_logo.png" alt="AWS">
+      <img class="technology-logo-img animate-logo" src="./Images/jenkins-icon.png" alt="Jenkins">
+      <img class="technology-logo-img animate-logo" src="./Images/python.png" alt="Python">
+      <img class="technology-logo-img animate-logo" src="./Images/JS.png" alt="JavaScript">
+      <img class="technology-logo-img animate-logo" src="./Images/arduino.png" alt="Arduino">
+      <img class="technology-logo-img animate-logo" src="./Images/raspberry-pi-logo-png-transparent.png" alt="Raspberry Pi">
+
+
+    </div>
   </div>
 </section>
 
@@ -127,16 +143,72 @@
   </div>
 </section>
 
+<!-- Other Projects Section -->
+<section class="other-projects-section animate-section">
+  <div class="technologies-title animate-title">Other Projects</div>
+  <div class="other-projects-container">
+    <!-- Project 1 - Mental Health Platform -->
+    <div class="other-project-item animate-project" style="animation-delay: 0.1s">
+      <div class="other-project-image">
+        <img src="./Images/mental-health-app.png" alt="Mental Health Platform" class="other-project-img">
+      </div>
+      <div class="other-project-tags">
+        <span class="other-project-tag">Data Visualization</span>
+        <span class="other-project-tag">Group Project</span>
+        <span class="other-project-tag">2023</span>
+      </div>
+      <h3 class="other-project-title">Mental Health Platform</h3>
+      <p class="other-project-description">
+        Designing an application aimed at assisting users in managing their emotions effectively by using a range of immersive tools and technologies to monitor and gather the data, and helping them to improve their emotional well being.
+      </p>
+      <button class="other-project-button">Coming Soon</button>
+    </div>
+
+    <!-- Project 2 - Research on menstruation -->
+    <div class="other-project-item animate-project" style="animation-delay: 0.3s">
+      <div class="other-project-image">
+        <img src="./Images/research-menstruation.png" alt="Research on menstruation" class="other-project-img">
+      </div>
+      <div class="other-project-tags">
+        <span class="other-project-tag">System Design</span>
+        <span class="other-project-tag">Group Project</span>
+        <span class="other-project-tag">2019</span>
+      </div>
+      <h3 class="other-project-title">Research on menstruation</h3>
+      <p class="other-project-description">
+        Examining and comprehending the comprehensive effects of menstruation on both girls and the environment, with the goal of addressing associated challenges at system level.
+      </p>
+      <button class="other-project-button">Coming Soon</button>
+    </div>
+  </div>
+</section>
+
 <!-- Project Detail Modal -->
 <div id="project-modal" class="project-modal">
   <div class="modal-content animate-modal">
     <button class="modal-close animate-close">&times;</button>
 
-    <!-- ShroomGuard Details Testsdsd -->
+    <!-- ShroomGuard Details -->
     <div id="shroomguard-details" class="project-details">
       <div class="modal-layout">
         <div class="modal-image-section animate-modal-image">
-          <img src="./Images/ShroomGuard.png" alt="ShroomGuard" class="modal-project-image">
+          <div class="image-gallery">
+            <button class="gallery-nav gallery-prev" onclick="changeImage('shroomguard', -1)">&#8249;</button>
+            <div class="gallery-container">
+              <img src="./Images/ShroomGuard.png" alt="ShroomGuard" class="modal-project-image gallery-image active">
+              <!-- Add more images here - replace with actual image paths -->
+              <img src="./Images/shroom_deploy.jpg" alt="ShroomGuard Screen 2" class="modal-project-image gallery-image">
+              <video src="./Images/shroom_demo.mp4" alt="ShroomGuard Demo Video" class="modal-project-image gallery-image" controls muted autoplay loop>
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <button class="gallery-nav gallery-next" onclick="changeImage('shroomguard', 1)">&#8250;</button>
+          </div>
+          <div class="gallery-indicators">
+            <span class="indicator active" onclick="showImage('shroomguard', 0)"></span>
+            <span class="indicator" onclick="showImage('shroomguard', 1)"></span>
+            <span class="indicator" onclick="showImage('shroomguard', 2)"></span>
+          </div>
         </div>
         
         <div class="modal-content-section animate-modal-content">
@@ -177,7 +249,21 @@
     <div id="thermodeliver-details" class="project-details">
       <div class="modal-layout">
         <div class="modal-image-section animate-modal-image">
-          <img src="./Images/ThermoDeliver.png" alt="ThermoDeliver" class="modal-project-image">
+          <div class="image-gallery">
+            <button class="gallery-nav gallery-prev" onclick="changeImage('thermodeliver', -1)">&#8249;</button>
+            <div class="gallery-container">
+              <img src="./Images/ThermoDeliver.png" alt="ThermoDeliver" class="modal-project-image gallery-image active">
+              <!-- Add more images here - replace with actual image paths -->
+              <img src="./Images/ThermoDeliver.png" alt="ThermoDeliver Screen 2" class="modal-project-image gallery-image">
+              <img src="./Images/ThermoDeliver.png" alt="ThermoDeliver Screen 3" class="modal-project-image gallery-image">
+            </div>
+            <button class="gallery-nav gallery-next" onclick="changeImage('thermodeliver', 1)">&#8250;</button>
+          </div>
+          <div class="gallery-indicators">
+            <span class="indicator active" onclick="showImage('thermodeliver', 0)"></span>
+            <span class="indicator" onclick="showImage('thermodeliver', 1)"></span>
+            <span class="indicator" onclick="showImage('thermodeliver', 2)"></span>
+          </div>
         </div>
         
         <div class="modal-content-section animate-modal-content">

@@ -86,24 +86,54 @@
     text-align: center;
     margin-bottom: 40px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: relative;
+}
+
+.technologies-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #888;
 }
 .technologies-logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 60px;
-    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
 }
+
+.logos-scroll {
+    display: flex;
+    align-items: center;
+    animation: scroll-logos 20s linear infinite;
+    gap: 80px;
+}
+
 .technology-logo-img {
     width: 120px;
     height: 120px;
     object-fit: contain;
     opacity: 0.9;
-    margin: 0 20px;
+    flex-shrink: 0;
     transition: transform 0.2s;
 }
+
 .technology-logo-img:hover {
     transform: scale(1.08);
+}
+
+/* Keyframe animation for logo scrolling */
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 /* Header styles */
 .header {
@@ -423,6 +453,108 @@ body {
   transform: translateY(-1px);
 }
 
+/* Other Projects Section */
+.other-projects-section {
+  padding: 80px 40px;
+  background-color: #f9f9f9;
+  min-height: auto;
+}
+
+.other-projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  align-items: stretch;
+}
+
+.other-project-item {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.other-project-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.other-project-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.other-project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.other-project-item .other-project-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 20px 20px 12px 20px;
+}
+
+.other-project-tag {
+  background: transparent;
+  border: 1px solid #666;
+  color: #666;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.other-project-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 20px 12px 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+}
+
+.other-project-description {
+  color: #555;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  margin: 0 20px 20px 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  flex-grow: 1;
+}
+
+.other-project-button {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  margin: 0 20px 25px 20px;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.other-project-button:hover {
+  background: #444;
+}
+
 /* Project Detail Modal */
 .project-modal {
   display: none;
@@ -502,6 +634,102 @@ body {
   max-height: 100%;
   object-fit: contain;
   border-radius: 12px;
+}
+
+/* Image Gallery Styles */
+.image-gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-image {
+  display: none;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.gallery-image.active {
+  display: block;
+}
+
+/* Video specific styles */
+video.gallery-image {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+video.gallery-image.active {
+  display: block;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.gallery-nav:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.gallery-prev {
+  left: 10px;
+}
+
+.gallery-next {
+  right: 10px;
+}
+
+.gallery-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.indicator.active {
+  background: rgba(255, 255, 255, 1);
+}
+
+.indicator:hover {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .modal-content-section {
@@ -1008,17 +1236,19 @@ body {
   }
   
   .technologies-logos {
-    gap: 30px;
-    padding: 0 0;
+    overflow: hidden;
+    width: 100%;
     max-width: calc(100vw - 30px);
     margin: 0 auto;
-    justify-content: center;
+  }
+  
+  .logos-scroll {
+    gap: 50px;
   }
   
   .technology-logo-img {
     width: 80px;
     height: 80px;
-    margin: 0 10px;
   }
   
   .experiences-section {
@@ -1076,6 +1306,34 @@ body {
   
   .project-tag {
     font-size: 0.75rem;
+  }
+
+  /* Other Projects Mobile Styles */
+  .other-projects-section {
+    padding: 60px 20px;
+  }
+  
+  .other-projects-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 100%;
+  }
+  
+  .other-project-item {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .other-project-image {
+    height: 200px;
+  }
+  
+  .other-project-title {
+    font-size: 1.2rem;
+  }
+  
+  .other-project-description {
+    font-size: 0.85rem;
   }
   
   /* Modal Responsive */

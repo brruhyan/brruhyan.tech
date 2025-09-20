@@ -250,4 +250,76 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(scaleName, 200); // Longer delay for orientation change
     });
     */
+
+    // Image Gallery Functionality
+    window.currentImageIndex = {
+        shroomguard: 0,
+        thermodeliver: 0
+    };
+
+    // Function to change image (next/previous)
+    window.changeImage = function(projectId, direction) {
+        const projectModal = document.getElementById(projectId + '-details');
+        const images = projectModal.querySelectorAll('.gallery-image');
+        const indicators = projectModal.querySelectorAll('.indicator');
+        
+        // Hide current image and indicator
+        images[window.currentImageIndex[projectId]].classList.remove('active');
+        indicators[window.currentImageIndex[projectId]].classList.remove('active');
+        
+        // Calculate new index
+        window.currentImageIndex[projectId] += direction;
+        
+        // Handle wraparound
+        if (window.currentImageIndex[projectId] >= images.length) {
+            window.currentImageIndex[projectId] = 0;
+        } else if (window.currentImageIndex[projectId] < 0) {
+            window.currentImageIndex[projectId] = images.length - 1;
+        }
+        
+        // Show new image and indicator
+        images[window.currentImageIndex[projectId]].classList.add('active');
+        indicators[window.currentImageIndex[projectId]].classList.add('active');
+    };
+
+    // Function to show specific image (indicator click)
+    window.showImage = function(projectId, index) {
+        const projectModal = document.getElementById(projectId + '-details');
+        const images = projectModal.querySelectorAll('.gallery-image');
+        const indicators = projectModal.querySelectorAll('.indicator');
+        
+        // Hide current image and indicator
+        images[window.currentImageIndex[projectId]].classList.remove('active');
+        indicators[window.currentImageIndex[projectId]].classList.remove('active');
+        
+        // Set new index and show image
+        window.currentImageIndex[projectId] = index;
+        images[window.currentImageIndex[projectId]].classList.add('active');
+        indicators[window.currentImageIndex[projectId]].classList.add('active');
+    };
+
+    // Reset gallery when modal opens
+    const originalProjectLinks = document.querySelectorAll('.project-link');
+    originalProjectLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-project');
+            // Reset to first image when modal opens
+            setTimeout(() => {
+                window.currentImageIndex[projectId] = 0;
+                const projectModal = document.getElementById(projectId + '-details');
+                if (projectModal) {
+                    const images = projectModal.querySelectorAll('.gallery-image');
+                    const indicators = projectModal.querySelectorAll('.indicator');
+                    
+                    // Reset all images and indicators
+                    images.forEach(img => img.classList.remove('active'));
+                    indicators.forEach(ind => ind.classList.remove('active'));
+                    
+                    // Show first image and indicator
+                    if (images[0]) images[0].classList.add('active');
+                    if (indicators[0]) indicators[0].classList.add('active');
+                }
+            }, 50);
+        });
+    });
 });
