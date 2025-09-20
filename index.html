@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body> 
+<div class="header">
+  <div class="header-left">portfolio</div>
+  <div class="header-right">
+    <a href="#about">about</a>
+    <a href="#works">works</a>
+    <a href="#certifications">certifications</a>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="intro-text">
+    <p> A tech-savvy individual driven by lifelong learning, specializing in intelligent systems with proven expertise in designing robust software architectures.</p>
+  </div>
+  <div class="main-name">
+    <span> Bryan Paul de Leon </span>
+  </div>
+</section>
+
+<!-- Technologies Section (scroll to see) -->
+<section class="technologies-section animate-section" id="about">
+  <div class="technologies-title animate-title"> My Tech Stack </div>
+  <div class="technologies-logos">
+  <img class="technology-logo-img animate-logo" src="./Images/laravel-logo.png" alt="Tech 1" style="animation-delay: 0.1s">
+  <img class="technology-logo-img animate-logo" src="./Images/Docker.png" alt="Tech 2" style="animation-delay: 0.2s">
+  <img class="technology-logo-img animate-logo" src="./Images/amazon_logo.png" alt="Tech 3" style="animation-delay: 0.3s">
+  <img class="technology-logo-img animate-logo" src="./Images/jenkins-icon.png" alt="Tech 4" style="animation-delay: 0.4s">
+  <img class="technology-logo-img animate-logo" src="./Images/python.png" alt="Tech 5" style="animation-delay: 0.5s">
+  </div>
+</section>
+
+<!-- Experiences Section -->
+<section class="experiences-section animate-section">
+  <div class="technologies-title animate-title">Experience</div>
+  <div class="experiences-container">
+    <!-- Experience 1 -->
+    <div class="experience-item animate-experience" style="animation-delay: 0.1s">
+      <div class="experience-logo">
+        <img src="./Images/MaraLabs.jpg" alt="Company 1" class="experience-logo-img">
+      </div>
+      <div class="experience-content">
+        <div class="experience-header">
+          <h3 class="company-name">MaraLabs</h3>
+          <h4 class="job-title">DevOps Engineer</h4>
+          <span class="job-duration">Aug 2025 - Present</span>
+        </div>
+        <div class="job-description">
+          <p>Monitor system health, performance, and availability of cloud infrastructure. Ensure system security through proper access control, patching, and compliance practices.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience 2 -->
+    <div class="experience-item animate-experience" style="animation-delay: 0.3s">
+      <div class="experience-logo">
+        <img src="./Images/etapInc.jpg" alt="Company 2" class="experience-logo-img">
+      </div>
+      <div class="experience-content">
+        <div class="experience-header">
+          <h3 class="company-name">eTap Inc.</h3>
+          <h4 class="job-title">Site Reliability Engineer</h4>
+          <span class="job-duration">March 2025 - May 2025</span>
+        </div>
+        <div class="job-description">
+          <p> Investigated a total of 18+ anomalies using the MITRE ATT&CK framework, leveraging Cloudflare-generated reports to analyze the nature of potential attacks. Gained familiarity with concepts essential to Site Reliability Engineering (SRE), including Docker and Linux</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="portfolio-section animate-section" id="works">
+  <div class="technologies-title animate-title">Work</div>
+  <div class="portfolio-container">
+    <!-- Project 1 - Image on left -->
+    <div class="portfolio-item animate-project" style="animation-delay: 0.1s">
+      <div class="portfolio-image">
+        <img src="./Images/ShroomGuard.png" alt="Due Diligence Platform" class="project-image">
+      </div>
+      <div class="portfolio-content">
+        <div class="project-tags">
+          <span class="project-tag">Deep Learning</span>
+          <span class="project-tag">Firebase</span>
+          <span class="project-tag">Amazon Web Services</span>
+        </div>
+        <h3 class="project-title">ShroomGuard</h3>
+        <p class="project-description">
+          A deep learning model specifically trained to categorize oyster mushroom caps into three distinct classes. Effectively reducing manual intervention and improving yields.
+          </p>
+        <a href="#" class="project-link" data-project="shroomguard">
+          See More
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2 - Image on right -->
+    <div class="portfolio-item portfolio-item-reverse animate-project" style="animation-delay: 0.3s">
+      <div class="portfolio-content">
+        <div class="project-tags">
+          <span class="project-tag">Arduino</span>
+          <span class="project-tag">C++</span>
+          <span class="project-tag">Embedded Systems</span>
+        </div>
+        <h3 class="project-title">ThermoDeliver</h3>
+        <p class="project-description">
+          A companion device for delivery drivers that monitors and ensures the optimal temperature of food orders during transit, enhancing customer satisfaction and food quality.
+        </p>
+        <a href="#" class="project-link" data-project="thermodeliver">
+          See More
+        </a>
+      </div>
+      <div class="portfolio-image">
+        <img src="./Images/ThermoDeliver.png" alt="ThermoDeliver" class="project-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Project Detail Modal -->
+<div id="project-modal" class="project-modal">
+  <div class="modal-content animate-modal">
+    <button class="modal-close animate-close">&times;</button>
+    
+    <!-- ShroomGuard Details -->
+    <div id="shroomguard-details" class="project-details">
+      <div class="modal-layout">
+        <div class="modal-image-section animate-modal-image">
+          <img src="./Images/ShroomGuard.png" alt="ShroomGuard" class="modal-project-image">
+        </div>
+        
+        <div class="modal-content-section animate-modal-content">
+          <div class="project-detail-header">
+            <h2 class="project-detail-title animate-modal-title">ShroomGuard</h2>
+            <p class="project-detail-description animate-modal-desc">
+              A deep learning model specifically trained to categorize oyster mushroom caps into three distinct classes. Effectively reducing manual intervention and improving yields.
+            </p>
+          </div>
+          
+          <div class="project-detail-body">
+            <div class="project-detail-section animate-modal-role">
+              <h3 class="detail-section-title">MY ROLE</h3>
+              <div class="role-tags">
+                <span class="role-tag">Cloud Architecture</span>
+                <span class="role-tag">Backend Development</span>
+              </div>
+            </div>
+            
+            <div class="project-detail-grid animate-modal-details">
+              <div class="detail-grid-item">
+                <h4 class="detail-label">TIME PERIOD</h4>
+                <p class="detail-value">6 Months</p>
+              </div>
+              <div class="detail-grid-item">
+                <h4 class="detail-label">TEAM MEMBERS</h4>
+                <p class="detail-value">3</p>
+              </div>
+            </div>
+            
+            <button class="jump-to-screens animate-modal-button">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ThermoDeliver Details -->
+    <div id="thermodeliver-details" class="project-details">
+      <div class="modal-layout">
+        <div class="modal-image-section animate-modal-image">
+          <img src="./Images/ThermoDeliver.png" alt="ThermoDeliver" class="modal-project-image">
+        </div>
+        
+        <div class="modal-content-section animate-modal-content">
+          <div class="project-detail-header">
+            <h2 class="project-detail-title animate-modal-title">ThermoDeliver</h2>
+            <p class="project-detail-description animate-modal-desc">
+              A companion device for delivery drivers that monitors and ensures the optimal temperature of food orders during transit, enhancing customer satisfaction and food quality.
+            </p>
+          </div>
+          
+          <div class="project-detail-body">
+            <div class="project-detail-section animate-modal-role">
+              <h3 class="detail-section-title">MY ROLE</h3>
+              <div class="role-tags">
+                <span class="role-tag">Hardware Engineer</span>
+                <span class="role-tag">Embedded Programming</span>
+              </div>
+            </div>
+            
+            <div class="project-detail-grid animate-modal-details">
+              <div class="detail-grid-item">
+                <h4 class="detail-label">TIME PERIOD</h4>
+                <p class="detail-value">3 Months</p>
+              </div>
+              <div class="detail-grid-item">
+                <h4 class="detail-label">TEAM MEMBERS</h4>
+                <p class="detail-value">4</p>
+              </div>
+            </div>
+            
+            <button class="jump-to-screens animate-modal-button">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
