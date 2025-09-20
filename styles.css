@@ -109,7 +109,7 @@
 .logos-scroll {
     display: flex;
     align-items: center;
-    animation: scroll-logos 20s linear infinite;
+    animation: scroll-logos 10s linear infinite;
     gap: 80px;
 }
 
@@ -1282,7 +1282,7 @@ video.gallery-image.active {
   
   .logos-scroll {
     gap: 50px;
-    animation: scroll-logos 12s linear infinite;
+    animation: scroll-logos 8s linear infinite;
   }
   
   .technology-logo-img {
