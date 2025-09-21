@@ -2,6 +2,55 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Portfolio website loaded successfully');
     
+    // Logo scrolling animation
+    function setupLogoScroll() {
+        const logoScroll = document.querySelector('.logos-scroll');
+        const logos = logoScroll.querySelectorAll('.technology-logo-img');
+        const firstSet = Array.from(logos).slice(0, logos.length / 2);
+        
+        // Calculate total width including gaps
+        const totalWidth = firstSet.reduce((acc, logo) => {
+            const style = window.getComputedStyle(logo);
+            const marginRight = parseInt(style.getPropertyValue('margin-right')) || 0;
+            const marginLeft = parseInt(style.getPropertyValue('margin-left')) || 0;
+            const width = logo.offsetWidth + marginRight + marginLeft;
+            return acc + width;
+        }, 0);
+
+        const gapStyle = window.getComputedStyle(logoScroll);
+        const gap = parseInt(gapStyle.getPropertyValue('gap')) || 0;
+        const fullWidth = totalWidth + (gap * (firstSet.length - 1));
+        
+        let currentScroll = 0;
+        const scrollStep = 0.5; // Base scroll speed
+        const isMobile = window.innerWidth <= 600;
+        const mobileMultiplier = isMobile ? 0.85 : 1; // Slightly faster on mobile now
+        
+        function animateScroll() {
+            currentScroll -= scrollStep * mobileMultiplier;
+            
+            // When we've scrolled the width of the first set, jump back to start
+            if (Math.abs(currentScroll) >= fullWidth) {
+                currentScroll = 0;
+            }
+            
+            // Use transform3d for better performance
+            logoScroll.style.transform = `translate3d(${currentScroll}px, 0, 0)`;
+            requestAnimationFrame(animateScroll);
+        }
+        
+        // Start the animation
+        requestAnimationFrame(animateScroll);
+    }
+    
+    // Initialize on load and handle resize
+    setupLogoScroll();
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(setupLogoScroll, 100);
+    });
+    
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.header-right a');
     navLinks.forEach(link => {

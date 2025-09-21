@@ -107,10 +107,13 @@
 }
 
 .logos-scroll {
-    display: flex;
-    align-items: center;
-    animation: scroll-logos 10s linear infinite;
-    gap: 80px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding-left: 40px;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .technology-logo-img {
@@ -120,20 +123,25 @@
     opacity: 0.9;
     flex-shrink: 0;
     transition: transform 0.2s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .technology-logo-img:hover {
     transform: scale(1.08);
 }
 
-/* Keyframe animation for logo scrolling */
-@keyframes scroll-logos {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+/* Mobile-specific styles */
+@media (max-width: 600px) {
+  .logos-scroll {
+    gap: 30px;
+    padding-left: 20px;
+  }
+  
+  .technology-logo-img {
+    width: 70px;
+    height: 70px;
+  }
 }
 /* Header styles */
 .header {
