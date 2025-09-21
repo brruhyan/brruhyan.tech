@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Portfolio website loaded successfully');
     
-    // Logo scrolling animation
+    // Logo scrolling and dragging functionality
     function setupLogoScroll() {
         const logoScroll = document.querySelector('.logos-scroll');
         const logos = logoScroll.querySelectorAll('.technology-logo-img');
@@ -22,25 +22,67 @@ document.addEventListener('DOMContentLoaded', function() {
         const fullWidth = totalWidth + (gap * (firstSet.length - 1));
         
         let currentScroll = 0;
-        const scrollStep = 0.5; // Base scroll speed
-        const isMobile = window.innerWidth <= 600;
-        const mobileMultiplier = isMobile ? 0.85 : 1; // Slightly faster on mobile now
-        
-        function animateScroll() {
-            currentScroll -= scrollStep * mobileMultiplier;
-            
-            // When we've scrolled the width of the first set, jump back to start
-            if (Math.abs(currentScroll) >= fullWidth) {
-                currentScroll = 0;
+        const scrollStep = 0.5;
+        const isMobile = window.innerWidth <= 768;
+
+        // Touch-based dragging variables
+        let isDragging = false;
+        let startX;
+        let scrollLeft;
+        let animationFrameId;
+
+        if (isMobile) {
+            // Stop auto-scrolling animation if it exists
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+
+            // Touch event handlers
+            logoScroll.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                startX = e.touches[0].pageX - logoScroll.offsetLeft;
+                scrollLeft = currentScroll;
+                logoScroll.style.cursor = 'grabbing';
+            });
+
+            logoScroll.addEventListener('touchend', () => {
+                isDragging = false;
+                logoScroll.style.cursor = 'grab';
+            });
+
+            logoScroll.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                
+                const x = e.touches[0].pageX - logoScroll.offsetLeft;
+                const walk = (x - startX);
+                currentScroll = scrollLeft + walk;
+
+                // Loop the scroll when reaching edges
+                if (currentScroll > 0) {
+                    currentScroll = -fullWidth + 1;
+                } else if (Math.abs(currentScroll) >= fullWidth) {
+                    currentScroll = 0;
+                }
+
+                logoScroll.style.transform = `translate3d(${currentScroll}px, 0, 0)`;
+            });
+
+        } else {
+            // Desktop auto-scroll animation
+            function animateScroll() {
+                currentScroll -= scrollStep;
+                
+                if (Math.abs(currentScroll) >= fullWidth) {
+                    currentScroll = 0;
+                }
+                
+                logoScroll.style.transform = `translate3d(${currentScroll}px, 0, 0)`;
+                animationFrameId = requestAnimationFrame(animateScroll);
             }
             
-            // Use transform3d for better performance
-            logoScroll.style.transform = `translate3d(${currentScroll}px, 0, 0)`;
-            requestAnimationFrame(animateScroll);
+            animationFrameId = requestAnimationFrame(animateScroll);
         }
-        
-        // Start the animation
-        requestAnimationFrame(animateScroll);
     }
     
     // Initialize on load and handle resize

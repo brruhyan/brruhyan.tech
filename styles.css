@@ -213,6 +213,13 @@
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   will-change: transform;
+  transition: transform 0.1s ease-out;
+  cursor: grab;
+  touch-action: pan-x pinch-zoom;
+}
+
+.logos-scroll:active {
+  cursor: grabbing;
 }
 
 .technology-logo-img {
