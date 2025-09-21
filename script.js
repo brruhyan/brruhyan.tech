@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize on load and handle resize
     setupLogoScroll();
+    
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
@@ -108,6 +109,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     projects.forEach((project, index) => {
                         setTimeout(() => {
                             project.classList.add('visible');
+                        }, 400 + (index * 200));
+                    });
+                    
+                    // Animate certification items with staggered timing
+                    const certItems = entry.target.querySelectorAll('.cert-item');
+                    certItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('visible');
                         }, 400 + (index * 200));
                     });
                 }
