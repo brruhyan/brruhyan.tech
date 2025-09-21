@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (selectedProject) {
                 selectedProject.classList.add('active');
                 modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
+                document.body.classList.add('modal-open');
                 
                 // Start modal animation sequence
                 setTimeout(() => {
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close after animation
         setTimeout(() => {
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.classList.remove('modal-open');
             projectDetails.forEach(detail => {
                 detail.classList.remove('active');
             });
