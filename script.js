@@ -142,15 +142,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Project modal functionality
     const modal = document.getElementById('project-modal');
-    const projectLinks = document.querySelectorAll('.project-link');
+    const projectLinks = document.querySelectorAll('.project-link, .other-project-link');
     const closeModal = document.querySelector('.modal-close');
     const projectDetails = document.querySelectorAll('.project-details');
     
-    // Open modal when clicking "See More"
+    // Open modal when clicking "See More" or "Learn More"
     projectLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const projectId = this.getAttribute('data-project');
+            
+            // Only open modal if data-project attribute exists
+            if (!projectId) return;
             
             // Hide all project details
             projectDetails.forEach(detail => {
@@ -319,7 +322,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Image Gallery Functionality
     window.currentImageIndex = {
         shroomguard: 0,
-        thermodeliver: 0
+        thermodeliver: 0,
+        extracurriculars: 0
     };
 
     // Function to change image (next/previous)
@@ -364,10 +368,12 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Reset gallery when modal opens
-    const originalProjectLinks = document.querySelectorAll('.project-link');
+    const originalProjectLinks = document.querySelectorAll('.project-link, .other-project-link');
     originalProjectLinks.forEach(link => {
         link.addEventListener('click', function() {
             const projectId = this.getAttribute('data-project');
+            // Only reset gallery if data-project attribute exists
+            if (!projectId) return;
             // Reset to first image when modal opens
             setTimeout(() => {
                 window.currentImageIndex[projectId] = 0;

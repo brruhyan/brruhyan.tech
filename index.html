@@ -189,7 +189,7 @@
         <p class="project-description">
           Collection of stuff I did outside of work such as joining competitions, hackathons, and other commendations.
         </p>
-        <a href="#" class="other-project-link">
+        <a href="#" class="other-project-link" data-project="extracurriculars">
           Learn More
         </a>
       </div>
@@ -344,6 +344,61 @@
             </div>
             
             <button class="jump-to-screens animate-modal-button">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Extracurriculars Details -->
+    <div id="extracurriculars-details" class="project-details">
+      <div class="modal-layout">
+        <div class="modal-image-section animate-modal-image">
+          <div class="image-gallery">
+            <button class="gallery-nav gallery-prev" onclick="changeImage('extracurriculars', -1)">&#8249;</button>
+            <div class="gallery-container">
+              <img src="./Images/pitch.jpg" alt="Competition Pitching" class="modal-project-image gallery-image active">
+              <img src="./Images/proj.png" alt="Project Showcase" class="modal-project-image gallery-image">
+              <img src="./Images/9ec86c3f-2f63-404e-8f86-ee2c1d9919c8.png" alt="Achievement Certificate" class="modal-project-image gallery-image">
+            </div>
+            <button class="gallery-nav gallery-next" onclick="changeImage('extracurriculars', 1)">&#8250;</button>
+          </div>
+          <div class="gallery-indicators">
+            <span class="indicator active" onclick="showImage('extracurriculars', 0)"></span>
+            <span class="indicator" onclick="showImage('extracurriculars', 1)"></span>
+            <span class="indicator" onclick="showImage('extracurriculars', 2)"></span>
+          </div>
+        </div>
+        
+        <div class="modal-content-section animate-modal-content">
+          <div class="project-detail-header">
+            <h2 class="project-detail-title animate-modal-title">Extracurriculars</h2>
+            <p class="project-detail-description animate-modal-desc">
+              A collection of activities, competitions, and achievements outside of professional work. Including hackathons, coding competitions, community projects, and various commendations received throughout my academic and early career journey.
+            </p>
+          </div>
+          
+          <div class="project-detail-body">
+            <div class="project-detail-section animate-modal-role">
+              <h3 class="detail-section-title">HIGHLIGHTS</h3>
+              <div class="role-tags">
+                <span class="role-tag">Hackathons</span>
+                <span class="role-tag">Coding Competitions</span>
+                <span class="role-tag">Community Projects</span>
+                <span class="role-tag">Academic Awards</span>
+              </div>
+            </div>
+            
+            <div class="project-detail-grid animate-modal-details">
+              <div class="detail-grid-item">
+                <h4 class="detail-label">COMPETITIONS</h4>
+                <p class="detail-value">15+ Events</p>
+              </div>
+              <div class="detail-grid-item">
+                <h4 class="detail-label">AWARDS</h4>
+                <p class="detail-value">Multiple Recognitions</p>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
