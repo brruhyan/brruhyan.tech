@@ -149,11 +149,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Open modal when clicking "See More" or "Learn More"
     projectLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const projectId = this.getAttribute('data-project');
             
             // Only open modal if data-project attribute exists
             if (!projectId) return;
+            
+            e.preventDefault();
             
             // Hide all project details
             projectDetails.forEach(detail => {
