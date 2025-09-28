@@ -98,14 +98,15 @@
 @media (max-width: 900px) {
   .hero-content {
     padding-left: 4vw;
+    padding-right: 4vw;
     padding-bottom: 30px;
     margin-bottom: 0;
   }
   .hero-image-preview {
     height: 180px;
-    width: calc(100vw - 80px);
-    margin-left: 40px;
-    margin-right: 40px;
+    width: calc(100vw - 8vw);
+    margin-left: 4vw;
+    margin-right: 4vw;
   }
   .hero-image-crop {
     height: 180px;
