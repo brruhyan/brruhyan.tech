@@ -21,7 +21,7 @@
     flex: 1;
     display: flex;
     align-items: flex-end;
-    padding-left: 7vw;
+    padding-left: 40px;
     padding-bottom: 40px;
     z-index: 2;
     position: relative;
@@ -82,6 +82,16 @@
   }
   .hero-image-preview {
     margin-top: 0;
+    width: calc(100vw - 80px);
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  .hero-image-crop {
+    width: 100%;
+    min-width: 100%;
+  }
+  .technologies-section {
+    margin-top: 80px;
   }
 }
 
@@ -93,9 +103,14 @@
   }
   .hero-image-preview {
     height: 180px;
+    width: calc(100vw - 80px);
+    margin-left: 40px;
+    margin-right: 40px;
   }
   .hero-image-crop {
     height: 180px;
+    width: 100%;
+    min-width: 100%;
   }
   .left-name {
     font-size: 2.2rem !important;
