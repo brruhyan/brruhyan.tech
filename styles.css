@@ -2355,7 +2355,7 @@ div.main-name {
 .contact-social-links {
     display: flex;
     gap: 16px;
-    margin-top: 65px;
+    margin-top: 75px;
     flex-wrap: wrap;
     justify-content: flex-end;
 }
