@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan Paul de Leon - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #f4f4f4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: white;
+            padding: 20px 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .back-button {
+            background: #222;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #444;
+        }
+
+        .resume-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .resume-title {
+            font-size: 2rem;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .resume-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .action-button {
+            background: #007acc;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background: #005999;
+        }
+
+        .download-button {
+            background: #28a745;
+        }
+
+        .download-button:hover {
+            background: #1e7e34;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            max-width: 900px;
+            height: 80vh;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdf-fallback {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdf-fallback p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+
+            .resume-container {
+                padding: 20px 10px;
+            }
+
+            .resume-title {
+                font-size: 1.5rem;
+            }
+
+            .resume-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pdf-viewer {
+                height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">Resume</div>
+        <a href="index.html" class="back-button">← Back to Portfolio</a>
+    </div>
+
+    <div class="resume-container">
+        <h1 class="resume-title">Bryan Paul de Leon</h1>
+        
+        <div class="resume-actions">
+            <a href="Images/2025 Resume - de Leon - Google Docs.pdf" target="_blank" class="action-button">
+                Open in New Tab
+            </a>
+            <a href="Images/2025 Resume - de Leon - Google Docs.pdf" download class="action-button download-button">
+                Download PDF
+            </a>
+        </div>
+
+        <!-- PDF Viewer -->
+        <iframe 
+            src="Images/2025 Resume - de Leon - Google Docs.pdf" 
+            class="pdf-viewer"
+            title="Bryan Paul de Leon Resume">
+        </iframe>
+
+        <!-- Fallback for browsers that don't support PDF viewing -->
+        <div class="pdf-fallback" style="display: none;">
+            <p>Your browser doesn't support PDF viewing.</p>
+            <a href="Images/2025 Resume - de Leon - Google Docs.pdf" target="_blank" class="action-button">
+                View PDF in New Tab
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Check if PDF can be displayed, show fallback if not
+        const iframe = document.querySelector('.pdf-viewer');
+        const fallback = document.querySelector('.pdf-fallback');
+        
+        iframe.onload = function() {
+            // PDF loaded successfully
+        };
+        
+        iframe.onerror = function() {
+            // PDF failed to load, show fallback
+            iframe.style.display = 'none';
+            fallback.style.display = 'block';
+        };
+    </script>
+</body>
+</html>
