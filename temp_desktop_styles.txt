@@ -1,0 +1,14 @@
+/* Desktop responsive adjustments */
+@media (min-width: 1024px) {
+    .contact-container {
+        gap: 100px;
+    }
+    
+    .contact-title {
+        font-size: 3rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 1.2rem;
+    }
+}

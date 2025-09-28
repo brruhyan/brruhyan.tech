@@ -110,11 +110,8 @@
 <section class="portfolio-section animate-section" id="works">
   <div class="technologies-title animate-title">Works</div>
   <div class="portfolio-container">
-    <!-- Project 1 - Image on left -->
+    <!-- Project 1 - Content on left, Image on right -->
     <div class="portfolio-item animate-project" style="animation-delay: 0.1s">
-      <div class="portfolio-image">
-        <img src="./Images/ShroomGuard.png" alt="Due Diligence Platform" class="project-image">
-      </div>
       <div class="portfolio-content">
         <div class="project-tags">
           <span class="project-tag">Deep Learning</span>
@@ -129,10 +126,13 @@
           See More
         </a>
       </div>
+      <div class="portfolio-image">
+        <img src="./Images/ShroomGuard.png" alt="Due Diligence Platform" class="project-image">
+      </div>
     </div>
 
-    <!-- Project 2 - Image on right -->
-    <div class="portfolio-item portfolio-item-reverse animate-project" style="animation-delay: 0.3s">
+    <!-- Project 2 - Content on left, Image on right -->
+    <div class="portfolio-item animate-project" style="animation-delay: 0.3s">
       <div class="portfolio-content">
         <div class="project-tags">
           <span class="project-tag">Arduino</span>
@@ -411,17 +411,32 @@
 
 <!-- Contact Section -->
 <section class="contact-section animate-section">
-    <div class="contact-content">
-        <h2 class="contact-title">Let's Work Together!</h2>
-        <p class="contact-subtitle">Send me a message through my social media accounts below!</p>
-        
-        <div class="contact-social-links">
-            <a href="https://www.linkedin.com/in/bpadl" target="_blank" class="social-circle">
-                <img src="./Images/LI-In-Bug.png" alt="LinkedIn" class="social-icon">
+    <div class="contact-container">
+        <div class="contact-left">
+            <h2 class="contact-title">Get in touch</h2>
+            <p class="contact-subtitle">Feel free to reach out if you want to have a chat, or have any questions</p>
+            <a href="mailto:bryanpaul.deleon@gmail.com" class="contact-button">
+                Contact me
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </a>
-            <a href="https://github.com/brruhyan" target="_blank" class="social-circle">
-                <img src="./Images/github-mark.png" alt="GitHub" class="social-icon">
-            </a>
+        </div>
+        <div class="contact-right">
+            <div class="contact-social-links">
+                <a href="mailto:bryanpaul.careers@gmail.com" class="social-button">
+                    Email
+                </a>
+                <a href="https://www.linkedin.com/in/bpadl" target="_blank" class="social-button">
+                    LinkedIn
+                </a>
+                <a href="./Images/2025 Resume - de Leon - Google Docs.pdf" target="_blank" class="social-button">
+                    CV
+                </a>
+                <a href="https://www.behance.net/konzaibonzai" target="_blank" class="social-button">
+                    Behance
+                </a>
+            </div>
         </div>
     </div>
 </section>
