@@ -82,7 +82,7 @@
           <span class="job-duration">Aug 2025 - Present</span>
         </div>
         <div class="job-description">
-          <p>Built the original observability and alerting system using Grafana and Prometheus, for performance monitoring across local and cloud environments.</p>
+          <p>Built the original observability and alerting infrasctructure using Grafana and Prometheus, for performance monitoring across local and cloud environments.</p>
         </div>
       </div>
     </div>
@@ -110,6 +110,26 @@
 <section class="portfolio-section animate-section" id="works">
   <div class="technologies-title animate-title">Works</div>
   <div class="portfolio-container">
+
+    <!-- Project 1 - Content on left, Image on right -->
+    <div class="portfolio-item animate-project" style="animation-delay: 0.1s">
+      <div class="portfolio-content">
+        <div class="project-tags">
+          <span class="project-tag">FilamentPHP</span>
+          <span class="project-tag">Laravel</span>
+          <span class="project-tag">Docker</span>
+        </div>
+        <h3 class="project-title">Channel Management Platform</h3>
+        <p class="project-description">
+          A sales tracking platform built with FilamentPHP, Laravel and MySQL enabling sales representatives to efficiently manage and monitor leads, deals, and performance metrics.           </p>
+        <a href="#" class="project-link" data-project="channel-management">
+          See More
+        </a>
+      </div>
+      <div class="portfolio-image">
+        <img src="./Images/channel.jpg" alt="Channel Management Platform" class="project-image">
+      </div>
+    </div>
     <!-- Project 1 - Content on left, Image on right -->
     <div class="portfolio-item animate-project" style="animation-delay: 0.1s">
       <div class="portfolio-content">
@@ -288,6 +308,57 @@
               <div class="detail-grid-item">
                 <h4 class="detail-label">TEAM MEMBERS</h4>
                 <p class="detail-value">3</p>
+              </div>
+            </div>
+            
+            <button class="jump-to-screens animate-modal-button">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Channel Management Platform Details -->
+    <div id="channel-management-details" class="project-details">
+      <div class="modal-layout">
+        <div class="modal-image-section animate-modal-image">
+          <div class="image-gallery">
+            <button class="gallery-nav gallery-prev" onclick="changeImage('channel-management', -1)">&#8249;</button>
+            <div class="gallery-container">
+              <img src="./Images/channel.jpg" alt="Channel Management Platform" class="modal-project-image gallery-image active">
+              <!-- Add more images here - replace with actual image paths -->
+            </div>
+            <button class="gallery-nav gallery-next" onclick="changeImage('channel-management', 1)">&#8250;</button>
+          </div>
+          <div class="gallery-indicators">
+            <span class="indicator active" onclick="showImage('channel-management', 0)"></span>
+          </div>
+        </div>
+        
+        <div class="modal-content-section animate-modal-content">
+          <div class="project-detail-header">
+            <h2 class="project-detail-title animate-modal-title">Channel Management Platform</h2>
+            <p class="project-detail-description animate-modal-desc">
+              A comprehensive sales tracking platform that empowers sales representatives to efficiently manage and monitor leads, deals, and performance metrics in real-time. Deployed through Laravel Sail and Cloudflare.
+            </p>
+          </div>
+          
+          <div class="project-detail-body">
+            <div class="project-detail-section animate-modal-role">
+              <h3 class="detail-section-title">MY ROLE</h3>
+              <div class="role-tags">
+                <span class="role-tag">Full-Stack Development</span>
+                <span class="role-tag">Quality Assurance</span>
+              </div>
+            </div>
+            
+            <div class="project-detail-grid animate-modal-details">
+              <div class="detail-grid-item">
+                <h4 class="detail-label">TIME PERIOD</h4>
+                <p class="detail-value">TBD</p>
+              </div>
+              <div class="detail-grid-item">
+                <h4 class="detail-label">TEAM MEMBERS</h4>
+                <p class="detail-value">1</p>
               </div>
             </div>
             
