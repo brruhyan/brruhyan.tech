@@ -1,6 +1,32 @@
 // Portfolio website script
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Portfolio website loaded successfully');
+
+    // Hero clock - show local time with timezone
+    function updateHeroClock() {
+        const clockEl = document.getElementById('hero-clock');
+        if (!clockEl) return;
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        // Get short timezone abbreviation
+        const tz = Intl.DateTimeFormat('en', { timeZoneName: 'short' }).formatToParts(now)
+            .find(p => p.type === 'timeZoneName')?.value || '';
+        clockEl.textContent = hours + ':' + minutes + ' ' + tz;
+    }
+    updateHeroClock();
+    setInterval(updateHeroClock, 10000);
+
+    // Scroll Down click handler
+    const scrollBtn = document.querySelector('.hero-scroll');
+    if (scrollBtn) {
+        scrollBtn.addEventListener('click', function() {
+            const nextSection = document.querySelector('.technologies-section') || document.querySelector('#about');
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
     
     // Logo scrolling animation
     let globalAnimationFrameId = null;
