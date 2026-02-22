@@ -1077,7 +1077,7 @@ body.modal-open {
   gap: 60px;
   align-items: flex-end;
   padding: 60px 50px;
-  background: linear-gradient(135deg, #f4f4f4 0%, #dce5f0 50%, #c5d9ed 100%);
+  background: linear-gradient(135deg, #f4f4f4 0%, #e0e0e0 100%);
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   position: relative;
