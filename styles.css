@@ -1199,8 +1199,21 @@ body.modal-open {
   opacity: 1;
   visibility: visible;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
+}
+
+.gallery-section .technologies-title {
+  align-self: flex-start;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.gallery-section .technologies-title::after {
+  display: none;
 }
 
 .gallery-container {
