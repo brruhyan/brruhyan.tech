@@ -913,9 +913,9 @@ body.modal-open {
 
 /* Contact Section */
 .contact-section {
-    padding: 80px 40px;
+    background: #3a3a3a;
     color: white;
-    background-color: #2A2A2A;
+    padding: 80px 40px;
     width: 100%;
     position: relative;
     z-index: 1;
@@ -923,24 +923,45 @@ body.modal-open {
 }
 
 .contact-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    gap: 60px;
     align-items: flex-start;
-    padding: 0;
+    gap: 80px;
 }
 
 .contact-left {
     flex: 1;
 }
 
-.contact-left h2 {
-    font-size: 2.5rem;
-    font-weight: 500;
-    line-height: 1.3;
-    margin: 0;
+.contact-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 30px 0;
+    color: white;
+    font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.contact-info-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.1rem;
+}
+
+.contact-link {
+    color: #5B9FE0;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.contact-link:hover {
+    opacity: 0.8;
+}
+
+.contact-divider {
     color: white;
 }
 
@@ -948,151 +969,67 @@ body.modal-open {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: flex-start;
+    gap: 0;
+    position: relative;
 }
 
-.socials h3 {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin: 0 0 20px 0;
-    color: white;
-}
-
-.social-links {
+.contact-social-links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    margin-left: auto;
+    position: absolute;
+    top: 0;
+    right: 300px;
 }
 
-.social-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.social-button {
+    background: none;
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    padding: 0;
+    border-radius: 0;
+    font-weight: 400;
+    font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     transition: opacity 0.3s ease;
-}
-
-.social-link:hover {
-    opacity: 0.8;
-}
-
-.social-icon {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-}
-
-.lets-chat-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: white;
-    color: #2A2A2A;
-    padding: 15px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 500;
     font-size: 1.1rem;
-    transition: transform 0.3s ease;
-    margin-top: 20px;
-    width: fit-content;
+    border: none;
+    cursor: pointer;
+    display: inline;
+    gap: 8px;
 }
 
-.lets-chat-button:hover {
-    transform: translateY(-2px);
+.social-button:hover {
+    opacity: 0.7;
 }
 
-.arrow {
-    font-size: 1.2rem;
-}
-
-.contact-left h2 {
-    font-size: 2.5rem;
-    font-weight: 500;
-    line-height: 1.3;
-    margin: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.contact-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.socials h3 {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin: 0 0 20px 0;
-    color: #FFFFFF;
-}
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: opacity 0.3s ease;
-}
-
-.social-link:hover {
-    opacity: 0.8;
-}
-
-.social-icon {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-}
-
-.lets-chat-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: white;
-    color: #2A2A2A;
-    padding: 15px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
-    margin-top: 40px;
-    width: fit-content;
-}
-
-.lets-chat-button:hover {
-    transform: translateY(-2px);
-}
-
-.arrow {
-    font-size: 1.2rem;
+.arrow-icon {
+    margin-left: 4px;
 }
 
 @media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 20px;
+    }
+
     .contact-container {
         flex-direction: column;
         gap: 40px;
     }
 
-    .contact-left h2 {
-        font-size: 2rem;
+    .contact-title {
+        font-size: 2.5rem;
     }
 
-    .contact-section {
-        padding: 60px 20px;
+    .contact-info-links {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 1rem;
+    }
+
+    .contact-divider {
+        display: none;
     }
 }
 
@@ -2563,23 +2500,6 @@ div.main-name {
     justify-content: flex-end;
 }
 
-.social-button {
-    background: #374151;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 20px;
-    font-weight: 500;
-    font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.social-button:hover {
-    background: #4b5563;
-    transform: translateY(-2px);
-}
-
 .contact-footer {
     font-size: 0.85rem;
     color: #6b7280;
@@ -2622,13 +2542,7 @@ div.main-name {
         margin-top: 30px;
     }
 
-    .social-button {
-        font-size: 0.85rem;
-        padding: 8px 14px;
-    }
 }
-
-
 
 /* Mobile Contact Section - Center text */
 @media (max-width: 768px) {
