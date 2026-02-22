@@ -1191,21 +1191,22 @@ body.modal-open {
 
 /* Gallery Section */
 .gallery-section {
-  padding: 40px 40px;
+  padding: 60px 40px;
   min-height: auto;
   position: relative;
   width: 100%;
   background: #f4f4f4;
   opacity: 1;
   visibility: visible;
-  display: block;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .gallery-container {
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width: 1600px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 16px;
   width: 100%;
 }
@@ -1216,7 +1217,7 @@ body.modal-open {
   border-radius: 20px;
   background: #f5f5f5;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 240px;
+  min-height: 160px;
   display: block;
 }
 
@@ -1237,12 +1238,12 @@ body.modal-open {
 
 @media (max-width: 1200px) {
   .gallery-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
   }
   
   .gallery-item {
-    min-height: 120px;
+    min-height: 140px;
   }
 }
 
