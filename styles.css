@@ -784,25 +784,6 @@ body.modal-open {
 }
 
 /* Certifications Section */
-.certifications-section {
-    padding: 100px 40px;
-    text-align: center;
-}
-
-.section-what {
-    color: #444;
-    font-size: 1rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.section-description {
-    max-width: 800px;
-    margin: 0 auto 50px;
-    color: #1a1a1a;
-    font-size: 0.95rem;
     line-height: 1.5;
     font-weight: 500;
     letter-spacing: 0.01em;
@@ -2127,11 +2108,6 @@ video.preview-image::-webkit-media-controls-start-playback-button {
   .experience-item {
     grid-template-columns: 45px 1fr;
     gap: 20px;
-  }
-  
-  .experience-content {
-    grid-template-columns: 1fr;
-    gap: 15px;
   }
   
   .experience-logo {
