@@ -52,6 +52,8 @@
       <img class="technology-logo-img animate-logo" src="./Images/arduino.png" alt="Arduino" style="animation-delay: 0.5s">
       <img class="technology-logo-img animate-logo" src="./Images/raspberry-pi-logo-png-transparent.png" alt="Raspberry Pi" style="animation-delay: 0.5s">
       <img class="technology-logo-img animate-logo" src="./Images/linux.png" alt="Linux" style="animation-delay: 0.5s">
+      <img class="technology-logo-img animate-logo" src="./Images/gitlab-logo-500-rgb.png" alt="GitLab" style="animation-delay: 0.5s">
+
 
       <!-- Duplicate for seamless loop -->
       <img class="technology-logo-img animate-logo" src="./Images/laravel-logo.png" alt="Laravel">
@@ -63,6 +65,7 @@
       <img class="technology-logo-img animate-logo" src="./Images/arduino.png" alt="Arduino">
       <img class="technology-logo-img animate-logo" src="./Images/raspberry-pi-logo-png-transparent.png" alt="Raspberry Pi">
       <img class="technology-logo-img animate-logo" src="./Images/linux.png" alt="Linux" style="animation-delay: 0.5s">
+      <img class="technology-logo-img animate-logo" src="./Images/gitlab-logo-500-rgb.png" alt="GitLab" style="animation-delay: 0.5s">
 
     </div>
   </div>
@@ -134,11 +137,32 @@
     <div class="portfolio-item animate-project" style="animation-delay: 0.1s">
       <div class="portfolio-content">
         <div class="project-tags">
+          <span class="project-tag">Prometheus</span>
+          <span class="project-tag">Grafana</span>
+          <span class="project-tag">Docker</span>
+        </div>
+        <h3 class="project-title">Observability</h3>
+        <p class="project-description">
+          Self-hosted observability infrastructure using Prometheus and Grafana.
+        </p>
+        <a href="#" class="project-link" data-project="observability">
+          See More
+        </a>
+      </div>
+      <div class="portfolio-image">
+        <img src="./Images/observability.jpg" alt="Observability Dashboard" class="project-image">
+      </div>
+    </div>
+    
+    <!-- Project 1 - Content on left, Image on right -->
+    <div class="portfolio-item animate-project" style="animation-delay: 0.1s">
+      <div class="portfolio-content">
+        <div class="project-tags">
           <span class="project-tag">FilamentPHP</span>
           <span class="project-tag">Laravel</span>
           <span class="project-tag">Docker</span>
         </div>
-        <h3 class="project-title">AksyonSales</h3>
+        <h3 class="project-title">Sales CRM</h3>
         <p class="project-description">
           A sales tracking platform for managing leads and performance metrics.        </p>
         <a href="#" class="project-link" data-project="channel-management">
@@ -149,6 +173,7 @@
         <img src="./Images/channel.jpg" alt="Channel Management Platform" class="project-image">
       </div>
     </div>
+
     <!-- Project 1 - Content on left, Image on right -->
     <div class="portfolio-item animate-project" style="animation-delay: 0.1s">
       <div class="portfolio-content">
@@ -278,6 +303,45 @@
         </div>
       </div>
     </div>
+
+    <!-- Observability Details -->
+    <div id="observability-details" class="project-details">
+      <div class="modal-layout">
+        <div class="modal-image-section animate-modal-image">
+          <div class="image-gallery">
+            <button class="gallery-nav gallery-prev" onclick="changeImage('observability', -1)">&#8249;</button>
+            <div class="gallery-container">
+              <img src="./Images/cover.png" alt="Observability Dashboard" class="modal-project-image gallery-image active">
+            </div>
+            <button class="gallery-nav gallery-next" onclick="changeImage('observability', 1)">&#8250;</button>
+          </div>
+          <div class="gallery-indicators">
+            <span class="indicator active" onclick="showImage('observability', 0)"></span>
+          </div>
+        </div>
+
+        <div class="modal-content-section animate-modal-content">
+          <div class="project-detail-header">
+            <h2 class="project-detail-title animate-modal-title">Observability</h2>
+            <p class="project-detail-description animate-modal-desc">
+              A self-hosted observability stack built with Prometheus and Grafana to monitor local and cloud workloads, surface anomalies quickly, and support faster incident response through actionable dashboards and alerts.
+            </p>
+          </div>
+
+          <div class="project-detail-body">
+            <div class="project-detail-section animate-modal-role">
+              <h3 class="detail-section-title">MY ROLE</h3>
+              <div class="role-tags">
+                <span class="role-tag">Full Stack Development</span>
+                <span class="role-tag">Dashboard Creation</span>
+              </div>
+            </div>
+
+            <button class="jump-to-screens animate-modal-button">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <!-- Channel Management Platform Details -->
     <div id="channel-management-details" class="project-details">
@@ -295,15 +359,15 @@
             <span class="indicator active" onclick="showImage('channel-management', 0)"></span>
           </div>
         </div>
-        
+                
         <div class="modal-content-section animate-modal-content">
           <div class="project-detail-header">
-            <h2 class="project-detail-title animate-modal-title">AksyonSales</h2>
+            <h2 class="project-detail-title animate-modal-title">Sales CRM</h2>
             <p class="project-detail-description animate-modal-desc">
               A comprehensive sales tracking platform that empowers sales representatives to efficiently manage and monitor leads, deals, and performance metrics in real-time. Deployed through Laravel Sail and Cloudflare.
             </p>
           </div>
-          
+
           <div class="project-detail-body">
             <div class="project-detail-section animate-modal-role">
               <h3 class="detail-section-title">MY ROLE</h3>

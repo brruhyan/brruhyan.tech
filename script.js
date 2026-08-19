@@ -354,6 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Image Gallery Functionality
     window.currentImageIndex = {
+        observability: 0,
         shroomguard: 0,
         thermodeliver: 0,
         extracurriculars: 0
