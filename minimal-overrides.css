@@ -8,8 +8,9 @@
     --minimal-blue: #9ac9da;
 }
 
-html { scroll-behavior: smooth; }
-body { background: var(--minimal-paper); color: var(--minimal-ink); font-family: 'DM Sans', sans-serif; }
+html { scroll-behavior: smooth; overflow-x: hidden; scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+body { background: var(--minimal-paper); color: var(--minimal-ink); font-family: 'DM Sans', sans-serif; overflow-x: hidden; scrollbar-width: none; -ms-overflow-style: none; }
 .header { max-width: 1440px; margin: 0 auto; padding: 28px 5vw 0; }
 .header-left, .header-right, .header-right a, .hero-tagline, .hero-bottom-bar, .technologies-title, .company-name, .job-title, .job-duration, .project-tags, .project-tag, .project-link, .contact-section { font-family: 'DM Sans', sans-serif; }
 .header-left { color: var(--minimal-ink); font-size: .85rem; letter-spacing: 0; }
@@ -17,7 +18,7 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
 .header-right a { color: var(--minimal-muted); font-size: .85rem; letter-spacing: 0; }
 .header-right a:hover { color: var(--minimal-ink); }
 
-.custom-hero.hero-section { max-width: 1440px; width: 90vw; margin: 0 auto; height: min(78vh, 780px); min-height: 580px; max-height: none; padding: 0; }
+.custom-hero.hero-section { max-width: 1440px; width: 90vw; margin: 48px auto 0; height: min(78vh, 780px); min-height: 580px; max-height: none; padding: 0; }
 .hero-tagline { color: var(--minimal-muted); font-size: .9rem; margin-bottom: 22px; }
 .hero-giant-text { color: var(--minimal-ink); font-family: 'Manrope', sans-serif; font-size: clamp(3.4rem, 8.3vw, 9.5rem); font-weight: 500; letter-spacing: -.075em; line-height: .94; }
 .hero-giant-text em { color: #80911d; font-style: normal; }
@@ -71,12 +72,16 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
 .contact-section { background: var(--minimal-ink); margin-bottom: 0; padding: 90px 6vw; width: 100%; }
 .contact-title { font-family: 'Manrope', sans-serif; font-size: clamp(2.6rem, 6vw, 6rem); font-weight: 500; letter-spacing: -.07em; line-height: .96; max-width: 700px; }
 .contact-social-links .social-button { border-bottom: 1px solid #55554f; color: var(--minimal-paper); font-family: 'DM Sans', sans-serif; font-size: .9rem; padding: 14px 0; }
+.contact-container { grid-template-columns: minmax(0, 1.5fr) minmax(180px, .5fr); gap: 80px; }
+.contact-title { font-size: clamp(3.5rem, 6.5vw, 6.5rem); max-width: 700px; }
+.contact-social-links { margin-top: 50px; }
 
 @media (max-width: 768px) {
     .header, .custom-hero.hero-section, .technologies-section, .experiences-section, .portfolio-section, .gallery-section { width: calc(100% - 40px); }
     .header { padding-top: 22px; }
+    body { left: 0; }
     .header-right { gap: 14px; }
-    .custom-hero.hero-section { height: calc(100vh - 80px); min-height: 520px; }
+    .custom-hero.hero-section { height: calc(100vh - 80px); min-height: 520px; margin-top: 24px; }
     .hero-giant-text { font-size: clamp(3rem, 13vw, 5.5rem); }
     .technologies-section, .experiences-section, .portfolio-section, .gallery-section { margin-bottom: 100px; }
     .logos-scroll { gap: 30px; }
@@ -87,7 +92,10 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
     .portfolio-image { min-height: 240px; order: 1; }
     .portfolio-content { order: 2; padding: 30px 0 38px; }
     .gallery-container { grid-template-columns: repeat(2, 1fr); }
-    .contact-section { padding: 70px 20px; width: 100%; }
+    .contact-section { margin-left: 0; padding: 70px 20px; width: 100%; }
+    .contact-container { grid-template-columns: 1fr; gap: 40px; }
+    .contact-title { font-size: clamp(2.8rem, 13vw, 4.5rem); }
+    .contact-social-links { margin-top: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -209,7 +217,7 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
 .project-title {
     color: #241c19;
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(2.3rem, 4vw, 4.2rem);
+    font-size: clamp(2.1rem, 3.2vw, 3.7rem);
     font-weight: 400;
     letter-spacing: -.045em;
     line-height: .94;
