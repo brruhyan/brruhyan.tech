@@ -11,14 +11,14 @@
 html { scroll-behavior: smooth; overflow-x: hidden; scrollbar-width: none; -ms-overflow-style: none; }
 html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 body { background: var(--minimal-paper); color: var(--minimal-ink); font-family: 'DM Sans', sans-serif; overflow-x: hidden; scrollbar-width: none; -ms-overflow-style: none; }
-.header { max-width: 1440px; margin: 0 auto; padding: 28px 5vw 0; }
+.header { max-width: 1440px; width: 90vw; margin: 0 auto; padding: 28px 0 0; }
 .header-left, .header-right, .header-right a, .hero-tagline, .hero-bottom-bar, .technologies-title, .company-name, .job-title, .job-duration, .project-tags, .project-tag, .project-link, .contact-section { font-family: 'DM Sans', sans-serif; }
 .header-left { color: var(--minimal-ink); font-size: .85rem; letter-spacing: 0; }
 .header-right { gap: 24px; }
 .header-right a { color: var(--minimal-muted); font-size: .85rem; letter-spacing: 0; }
 .header-right a:hover { color: var(--minimal-ink); }
 
-.custom-hero.hero-section { max-width: 1440px; width: 90vw; margin: 48px auto 0; height: min(78vh, 780px); min-height: 580px; max-height: none; padding: 0; }
+.custom-hero.hero-section { max-width: 1440px; width: 90vw; margin: 64px auto 48px; height: min(78vh, 780px); min-height: 580px; max-height: none; padding: 0; }
 .hero-tagline { color: var(--minimal-muted); font-size: .9rem; margin-bottom: 22px; }
 .hero-giant-text { color: var(--minimal-ink); font-family: 'Manrope', sans-serif; font-size: clamp(3.4rem, 8.3vw, 9.5rem); font-weight: 500; letter-spacing: -.075em; line-height: .94; }
 .hero-giant-text em { color: #80911d; font-style: normal; }
@@ -78,10 +78,10 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
 
 @media (max-width: 768px) {
     .header, .custom-hero.hero-section, .technologies-section, .experiences-section, .portfolio-section, .gallery-section { width: calc(100% - 40px); }
-    .header { padding-top: 22px; }
+    .header { padding: 22px 0 0; }
     body { left: 0; }
     .header-right { gap: 14px; }
-    .custom-hero.hero-section { height: calc(100vh - 80px); min-height: 520px; margin-top: 24px; }
+    .custom-hero.hero-section { height: calc(100vh - 80px); min-height: 520px; margin: 24px auto 32px; }
     .hero-giant-text { font-size: clamp(3rem, 13vw, 5.5rem); }
     .technologies-section, .experiences-section, .portfolio-section, .gallery-section { margin-bottom: 100px; }
     .logos-scroll { gap: 30px; }
