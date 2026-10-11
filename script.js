@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function() {
         glanceModal.classList.add('is-closing');
         glanceModal.setAttribute('aria-hidden', 'true');
         window.setTimeout(() => {
-            glanceModal.classList.remove('is-closing');
+            glanceModal.classList.remove('is-closing');     
         }, 220);
     }
 

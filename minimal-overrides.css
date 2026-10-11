@@ -3,7 +3,7 @@
     --minimal-ink: #171714;
     --minimal-muted: #70706a;
     --minimal-line: #d9d9d1;
-    --minimal-lime: #d7ec63;
+    --minimal-lime: #80911d;
     --minimal-coral: #f19a78;
     --minimal-blue: #9ac9da;
 }
@@ -247,13 +247,13 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
 }
 
 .project-meta span {
-    color: #241c19;
+    color: #6c8299;
     font-size: .72rem;
     line-height: 1.35;
 }
 
 .project-meta small {
-    color: #53657b;
+    color: #6c8299;
     display: block;
     font-family: 'IBM Plex Mono', monospace;
     font-size: .58rem;
@@ -383,9 +383,9 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
 
 .what-i-do-arrow {
     align-items: center;
-    background: #ffb914;
+    background: #80911d;
     border-radius: 50%;
-    color: #241c19;
+    color: var(--minimal-paper);
     display: inline-flex;
     flex: 0 0 32px;
     font-size: 1.15rem;
@@ -396,7 +396,7 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
 }
 
 .what-i-do-item:hover .what-i-do-arrow {
-    background: #f19a78;
+    background: #80911d;
     transform: translateX(3px);
 }
 
