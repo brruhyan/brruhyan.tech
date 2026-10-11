@@ -120,7 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     entry.target.classList.add('visible');
                     
                     // Animate titles with delay
-                    const title = entry.target.querySelector('.animate-title');
+                    const isExperienceSection = entry.target.classList.contains('experiences-section');
+                    const title = isExperienceSection ? null : entry.target.querySelector('.animate-title');
                     if (title) {
                         setTimeout(() => {
                             title.classList.add('visible');
@@ -136,7 +137,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                     
                     // Animate experience items with staggered timing
-                    const experiences = entry.target.querySelectorAll('.animate-experience');
+                    const experiences = isExperienceSection
+                        ? []
+                        : entry.target.querySelectorAll('.animate-experience');
                     experiences.forEach((exp, index) => {
                         setTimeout(() => {
                             exp.classList.add('visible');
@@ -159,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }, 120 + (index * 100));
                     });
                 }
-                
+
                 // Stop observing once animated
                 observer.unobserve(entry.target);
             }
@@ -171,6 +174,34 @@ document.addEventListener('DOMContentLoaded', function() {
     sectionsToAnimate.forEach(section => {
         observer.observe(section);
     });
+
+    const experienceList = document.querySelector('.experience-list');
+    if (experienceList) {
+        const experienceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const title = entry.target.querySelector('.animate-title');
+                if (title) {
+                    title.classList.add('visible');
+                }
+
+                const experiences = entry.target.querySelectorAll('.animate-experience');
+                experiences.forEach((exp, index) => {
+                    setTimeout(() => {
+                        exp.classList.add('visible');
+                    }, 120 + (index * 100));
+                });
+
+                experienceObserver.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -10% 0px'
+        });
+
+        experienceObserver.observe(experienceList);
+    }
     
     // Project modal functionality
     const modal = document.getElementById('project-modal');

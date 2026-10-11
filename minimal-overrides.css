@@ -400,6 +400,76 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
     transform: translateX(3px);
 }
 
+.experience-list {
+    display: block;
+    grid-column: 1 / -1;
+    margin-top: 92px;
+}
+
+.experience-heading {
+    margin-bottom: 22px;
+}
+
+.experience-heading h2 {
+    color: #241c19;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 400;
+    letter-spacing: -.045em;
+    line-height: .92;
+    margin: 0;
+}
+
+.experience-entries {
+    border-top: 1px solid var(--minimal-line);
+}
+
+.experience-entry {
+    align-items: center;
+    border-bottom: 1px solid var(--minimal-line);
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) auto;
+    gap: 22px;
+    min-height: 72px;
+    padding: 10px 0;
+}
+
+.experience-entry-logo {
+    background: #ecece5;
+    border-radius: 2px;
+    flex: 0 0 52px;
+    height: 44px;
+    object-fit: contain;
+    padding: 5px;
+    width: 52px;
+}
+
+.experience-entry-copy strong,
+.experience-entry-copy span {
+    display: block;
+}
+
+.experience-entry-copy strong {
+    color: var(--minimal-ink);
+    font-size: .95rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.experience-entry-copy span {
+    color: var(--minimal-muted);
+    font-size: .82rem;
+    line-height: 1.35;
+    margin-top: 4px;
+}
+
+.experience-entry-duration {
+    color: var(--minimal-muted);
+    font-size: .78rem;
+    font-style: italic;
+    white-space: nowrap;
+}
+
 .portfolio-item,
 .portfolio-content,
 .portfolio-image {
@@ -422,6 +492,11 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
     .what-i-do-intro h2 { font-size: clamp(3rem, 14vw, 4.4rem); }
     .what-i-do-list { margin-top: 4px; }
     .what-i-do-item { min-height: 72px; }
+    .experience-list { margin-top: 72px; }
+    .experience-heading h2 { font-size: clamp(2.6rem, 12vw, 4rem); }
+    .experience-entry { gap: 18px; grid-template-columns: 44px minmax(0, 1fr); }
+    .experience-entry-logo { flex-basis: 44px; height: 40px; width: 44px; }
+    .experience-entry-duration { grid-column: 2; }
     .portfolio-item { display: flex; flex-direction: column; grid-template-columns: 1fr; }
     .portfolio-image { order: 1; }
     .portfolio-content { order: 2; }
