@@ -189,6 +189,7 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
     justify-content: space-between;
     order: 1;
     padding: 28px 25px 26px;
+    position: relative;
 }
 
 .project-tags {
@@ -232,6 +233,35 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
     max-width: 290px;
 }
 
+.project-meta {
+    border-top: 1px solid #d8cec4;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    bottom: 26px;
+    left: 25px;
+    max-width: 290px;
+    padding-top: 13px;
+    position: absolute;
+    right: 25px;
+}
+
+.project-meta span {
+    color: #241c19;
+    font-size: .72rem;
+    line-height: 1.35;
+}
+
+.project-meta small {
+    color: #53657b;
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .58rem;
+    letter-spacing: .08em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
 .project-link {
     align-self: start;
     border-bottom: 0;
@@ -270,6 +300,7 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
     .portfolio-content { min-height: 310px; padding: 24px 22px 25px; }
     .portfolio-image { border-left: 0; border-top: 1px solid #d8cec4; min-height: 245px; }
     .project-title { font-size: clamp(2.5rem, 12vw, 4rem); }
+    .project-meta { bottom: 25px; left: 22px; right: 22px; }
 }
 
 /* What-I-do section */
