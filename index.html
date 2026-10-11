@@ -81,16 +81,16 @@
       <p>I automate the repetitive, create deployment templates teams can trust, and reduce cognitive load so people can focus on the work that matters.</p>
     </div>
     <div class="what-i-do-list">
-      <a href="#works" class="what-i-do-item">
+      <a href="#" class="what-i-do-item" data-glance="automation">
         <span><strong>Automation</strong><small>Repeatable workflows that remove manual friction.</small></span>
         <span class="what-i-do-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="#works" class="what-i-do-item">
-        <span><strong>Deployment templates</strong><small>Clear starting points for shipping with confidence.</small></span>
+      <a href="#" class="what-i-do-item" data-glance="containerized-workflows">
+        <span><strong>Containerized workflows</strong><small>Portable environments that stay consistent from build to deployment.</small></span>
         <span class="what-i-do-arrow" aria-hidden="true">→</span>
       </a>
-      <a href="#works" class="what-i-do-item">
-        <span><strong>Cognitive load</strong><small>Calmer tools, useful defaults, and fewer things to remember.</small></span>
+      <a href="#" class="what-i-do-item" data-glance="embedded-systems">
+        <span><strong>Embedded systems</strong><small>Reliable hardware and software working together in the real world.</small></span>
         <span class="what-i-do-arrow" aria-hidden="true">→</span>
       </a>
     </div>
@@ -214,6 +214,18 @@
     </div>
   </div>
 </section>
+
+<div id="glance-modal" class="glance-modal" aria-hidden="true">
+  <div class="glance-modal-content" role="dialog" aria-modal="true" aria-labelledby="glance-modal-title">
+    <button class="glance-modal-close" type="button" aria-label="Close detail">&times;</button>
+    <div class="glance-modal-copy">
+      <span class="what-i-do-kicker">At a glance</span>
+      <h2 id="glance-modal-title"></h2>
+      <p id="glance-modal-description"></p>
+    </div>
+    <div class="glance-modal-metrics" id="glance-modal-metrics" aria-label="Key metrics"></div>
+  </div>
+</div>
 
 <!-- Project Detail Modal -->
 <div id="project-modal" class="project-modal">

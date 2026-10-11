@@ -307,6 +307,75 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // At-a-glance detail modal
+    const glanceModal = document.getElementById('glance-modal');
+    const glanceTitle = document.getElementById('glance-modal-title');
+    const glanceDescription = document.getElementById('glance-modal-description');
+    const glanceMetrics = document.getElementById('glance-modal-metrics');
+    const glanceClose = document.querySelector('.glance-modal-close');
+    const glanceDetails = {
+        automation: {
+            title: 'Automation',
+            description: 'Turned repetitive release steps into reliable, repeatable workflows.',
+            metrics: [
+                { value: '10+', label: 'deployment templates' },
+                { value: '80%', label: 'reduction in deployment time' }
+            ]
+        },
+        'containerized-workflows': {
+            title: 'Containerized workflows',
+            description: 'Standardized development and deployment environments so services stay consistent from build to production.',
+            metrics: [
+                { value: 'Docker', label: 'containerized environments' },
+                { value: 'CI/CD', label: 'repeatable delivery' }
+            ]
+        },
+        'embedded-systems': {
+            title: 'Embedded systems',
+            description: 'Connected hardware, control logic, and real-world operations into dependable working prototypes.',
+            metrics: [
+                { value: 'C++', label: 'control logic' },
+                { value: 'IoT', label: 'hardware integrations' }
+            ]
+        }
+    };
+
+    function closeGlanceModal() {
+        if (!glanceModal) return;
+        glanceModal.classList.remove('is-open');
+        glanceModal.classList.add('is-closing');
+        glanceModal.setAttribute('aria-hidden', 'true');
+        window.setTimeout(() => {
+            glanceModal.classList.remove('is-closing');
+        }, 220);
+    }
+
+    document.querySelectorAll('.what-i-do-item[data-glance]').forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            const detail = glanceDetails[this.dataset.glance];
+            if (!detail || !glanceModal || !glanceTitle || !glanceDescription || !glanceMetrics) return;
+            glanceTitle.textContent = detail.title;
+            glanceDescription.textContent = detail.description;
+            glanceMetrics.replaceChildren(...detail.metrics.map(metric => {
+                const metricElement = document.createElement('div');
+                metricElement.className = 'glance-metric';
+                metricElement.innerHTML = `<strong>${metric.value}</strong><span>${metric.label}</span>`;
+                return metricElement;
+            }));
+            glanceModal.classList.remove('is-closing');
+            glanceModal.classList.add('is-open');
+            glanceModal.setAttribute('aria-hidden', 'false');
+        });
+    });
+
+    if (glanceClose) glanceClose.addEventListener('click', closeGlanceModal);
+    if (glanceModal) {
+        glanceModal.addEventListener('click', function (e) {
+            if (e.target === glanceModal) closeGlanceModal();
+        });
+    }
+
     // Dynamic name scaling function - DISABLED in favor of CSS clamp()
     /*
     function scaleName() {
