@@ -72,9 +72,9 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
 .contact-section { background: var(--minimal-ink); margin-bottom: 0; padding: 90px 6vw; width: 100%; }
 .contact-title { font-family: 'Manrope', sans-serif; font-size: clamp(2.6rem, 6vw, 6rem); font-weight: 500; letter-spacing: -.07em; line-height: .96; max-width: 700px; }
 .contact-social-links .social-button { border-bottom: 1px solid #55554f; color: var(--minimal-paper); font-family: 'DM Sans', sans-serif; font-size: .9rem; padding: 14px 0; }
-.contact-container { grid-template-columns: minmax(0, 1.5fr) minmax(180px, .5fr); gap: 80px; }
+.contact-container { align-items: stretch; grid-template-columns: minmax(0, 1.5fr) minmax(180px, .5fr); gap: 80px; }
 .contact-title { font-size: clamp(3.5rem, 6.5vw, 6.5rem); max-width: 700px; }
-.contact-social-links { margin-top: 50px; }
+.contact-social-links { align-self: stretch; box-sizing: border-box; height: 100%; justify-content: space-between; margin-top: 0; min-height: 0; position: static; }
 
 @media (max-width: 768px) {
     .header, .custom-hero.hero-section, .technologies-section, .experiences-section, .portfolio-section, .gallery-section { width: calc(100% - 40px); }
@@ -95,7 +95,7 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
     .contact-section { margin-left: 0; padding: 70px 20px; width: 100%; }
     .contact-container { grid-template-columns: 1fr; gap: 40px; }
     .contact-title { font-size: clamp(2.8rem, 13vw, 4.5rem); }
-    .contact-social-links { margin-top: 0; }
+    .contact-social-links { height: auto; margin-top: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (title) {
                         setTimeout(() => {
                             title.classList.add('visible');
-                        }, 200);
+                        }, 80);
                     }
                     
                     // Animate tech logos with staggered timing
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     logos.forEach((logo, index) => {
                         setTimeout(() => {
                             logo.classList.add('visible');
-                        }, 400 + (index * 100));
+                        }, 120 + (index * 60));
                     });
                     
                     // Animate experience items with staggered timing
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     experiences.forEach((exp, index) => {
                         setTimeout(() => {
                             exp.classList.add('visible');
-                        }, 400 + (index * 200));
+                        }, 120 + (index * 100));
                     });
                     
                     // Animate projects with staggered timing
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     projects.forEach((project, index) => {
                         setTimeout(() => {
                             project.classList.add('visible');
-                        }, 400 + (index * 200));
+                        }, 120 + (index * 100));
                     });
                     
                     // Animate certification items with staggered timing
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     certItems.forEach((item, index) => {
                         setTimeout(() => {
                             item.classList.add('visible');
-                        }, 400 + (index * 200));
+                        }, 120 + (index * 100));
                     });
                 }
                 
