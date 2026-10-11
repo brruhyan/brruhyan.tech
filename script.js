@@ -334,8 +334,8 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Embedded systems',
             description: 'Connected hardware, control logic, and real-world operations into dependable working prototypes.',
             metrics: [
-                { value: 'C++', label: 'control logic' },
-                { value: 'IoT', label: 'hardware integrations' }
+                { value: '4+', label: 'Devices created' },
+                { value: '2+', label: 'IoT integrations' }
             ]
         }
     };
