@@ -334,9 +334,10 @@ body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
     .portfolio-content { min-height: 0; padding: 24px 22px 28px; }
     .portfolio-image { border-left: 0; border-top: 1px solid #d8cec4; min-height: 245px; }
     .project-title { font-size: clamp(2.5rem, 12vw, 4rem); }
+    .project-link { margin-top: 28px; }
     .story-intro { gap: 0; grid-template-columns: 1fr; padding: 24px 0 52px; }
     .story-intro h2 { font-size: clamp(3rem, 15vw, 4.3rem); margin: 18px 0 30px; }
-    .story-copy { grid-column: 1; }
+    .story-copy { grid-column: 1; grid-row: auto; }
     .story-copy p { font-size: .94rem; }
 }
 
