@@ -65,8 +65,7 @@ projectImage.alt = project.title;
 
 const facts = [
     ['My role', project.role],
-    ['Industry', project.industry],
-    ['Team', project.team]
+    ['Industry', project.industry]
 ];
 
 document.getElementById('project-facts').innerHTML = facts
