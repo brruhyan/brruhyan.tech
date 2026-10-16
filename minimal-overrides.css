@@ -9,8 +9,11 @@
 }
 
 html { scroll-behavior: smooth; overflow-x: hidden; scrollbar-width: none; -ms-overflow-style: none; }
+html.no-smooth-scroll { scroll-behavior: auto !important; }
 html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
 body { background: var(--minimal-paper); color: var(--minimal-ink); font-family: 'DM Sans', sans-serif; overflow-x: hidden; scrollbar-width: none; -ms-overflow-style: none; }
+@keyframes page-fade-out { from { opacity: 1; } to { opacity: 0; } }
+body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
 .header { max-width: 1440px; width: 90vw; margin: 0 auto; padding: 28px 0 0; }
 .header-left, .header-right, .header-right a, .hero-tagline, .hero-bottom-bar, .technologies-title, .company-name, .job-title, .job-duration, .project-tags, .project-tag, .project-link, .contact-section { font-family: 'DM Sans', sans-serif; }
 .header-left { color: var(--minimal-ink); font-size: .85rem; letter-spacing: 0; }

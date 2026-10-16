@@ -2,6 +2,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Portfolio website loaded successfully');
 
+    if (window.location.hash === '#works') {
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                document.documentElement.classList.remove('no-smooth-scroll');
+            });
+        });
+    }
+
     // Hero clock - show local time with timezone
     function updateHeroClock() {
         const clockEl = document.getElementById('hero-clock');
@@ -205,7 +213,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Project modal functionality
     const modal = document.getElementById('project-modal');
-    const projectLinks = document.querySelectorAll('.project-link, .other-project-link');
+    const detailPageLinks = document.querySelectorAll('.project-link');
+    detailPageLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (e.defaultPrevented) return;
+
+            const destination = this.href;
+            if (!destination) return;
+
+            e.preventDefault();
+            document.body.classList.add('page-transition-out');
+            setTimeout(() => {
+                window.location.href = destination;
+            }, 280);
+        });
+    });
+
+    const projectLinks = document.querySelectorAll('.other-project-link');
     const closeModal = document.querySelector('.modal-close');
     const projectDetails = document.querySelectorAll('.project-details');
     
@@ -502,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Reset gallery when modal opens
-    const originalProjectLinks = document.querySelectorAll('.project-link, .other-project-link');
+    const originalProjectLinks = document.querySelectorAll('.other-project-link');
     originalProjectLinks.forEach(link => {
         link.addEventListener('click', function() {
             const projectId = this.getAttribute('data-project');
