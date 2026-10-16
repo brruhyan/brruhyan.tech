@@ -64,6 +64,57 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
 .project-link:hover { background: transparent; color: var(--minimal-lime); transform: none; }
 
 .gallery-section { background: transparent; margin-bottom: 150px; padding: 0; }
+.story-intro {
+    border-top: 1px solid #d8cec4;
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+    row-gap: 12px;
+    padding: 30px 0 68px;
+}
+
+.story-kicker {
+    color: #53657b;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .67rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.gallery-section .technologies-title {
+    color: #53657b;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .67rem;
+    font-weight: 400;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.story-intro h2 {
+    color: #241c19;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(3.2rem, 6vw, 5.25rem);
+    font-weight: 400;
+    grid-column: 1;
+    letter-spacing: -.045em;
+    line-height: .9;
+    margin: 18px 0 0;
+}
+
+.story-copy {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    max-width: 720px;
+}
+
+.story-copy p {
+    color: #a05e4c;
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 0 0 26px;
+}
+
+.story-copy p:last-child { margin-bottom: 0; }
 .gallery-section .technologies-title { margin-bottom: 28px; }
 .gallery-container { gap: 12px; grid-template-columns: repeat(6, 1fr); }
 .gallery-item { border-radius: 0; min-height: 0; }
@@ -301,6 +352,10 @@ body { background: var(--minimal-paper); color: var(--minimal-ink); font-family:
     .portfolio-image { border-left: 0; border-top: 1px solid #d8cec4; min-height: 245px; }
     .project-title { font-size: clamp(2.5rem, 12vw, 4rem); }
     .project-meta { bottom: 25px; left: 22px; right: 22px; }
+    .story-intro { gap: 0; grid-template-columns: 1fr; padding: 24px 0 52px; }
+    .story-intro h2 { font-size: clamp(3rem, 15vw, 4.3rem); margin: 18px 0 30px; }
+    .story-copy { grid-column: 1; }
+    .story-copy p { font-size: .94rem; }
 }
 
 /* What-I-do section */
