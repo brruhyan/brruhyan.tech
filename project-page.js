@@ -12,11 +12,7 @@ const projects = {
             { type: 'image', source: 'Images/observability.jpg', alt: 'Observability project preview' },
             { type: 'image', source: 'Images/cover.png', alt: 'Observability supporting image' }
         ],
-        impactMetrics: [
-            ['Faster', 'incident notifications'],
-            ['Reduced', 'mean time to recovery'],
-            ['Improved', 'incident response']
-        ]
+        impact: 'Incidents are identified and notified quickly, helping teams resolve issues faster and reduce mean time to recovery.'
     },
     'channel-management': {
         tags: 'FilamentPHP / Laravel / Docker',
@@ -31,11 +27,7 @@ const projects = {
             { type: 'image', source: 'Images/channel.jpg', alt: 'Sales CRM project preview' },
             { type: 'image', source: 'Images/contacts.jpg', alt: 'Sales CRM contacts screen' }
         ],
-        impactMetrics: [
-            ['Centralized', 'lead and deal tracking'],
-            ['Clearer', 'sales performance visibility'],
-            ['Improved', 'follow-up workflow']
-        ]
+        impact: 'The platform makes it easier to track leads, deals, and sales performance in one place, giving representatives clearer visibility into their work.'
     },
     shroomguard: {
         tags: 'Deep Learning / Firebase / Amazon Web Services',
@@ -51,11 +43,7 @@ const projects = {
             { type: 'image', source: 'Images/shroom_deploy.jpg', alt: 'ShroomGuard deployment screen' },
             { type: 'video', source: 'Images/shroom_demo.mp4', alt: 'ShroomGuard demonstration video' }
         ],
-        impactMetrics: [
-            ['98%', 'growth-stage accuracy'],
-            ['Optimal', 'harvesting window identification'],
-            ['Timely', 'user notifications']
-        ]
+        impact: 'The model supports more accurate harvesting decisions by identifying the right maturity window, helping prevent missed periods when mushrooms are no longer at their optimal harvest stage. Exhibited 98% accuracy in identifying growth stages, with results validated by Bureau of Plant Industry experts.'
     },
     thermodeliver: {
         tags: 'Arduino / C++ / Embedded Systems',
@@ -70,11 +58,7 @@ const projects = {
             { type: 'image', source: 'Images/ThermoDeliver.png', alt: 'ThermoDeliver project preview' },
             { type: 'image', source: 'Images/thermodeliver_dash.jpg', alt: 'ThermoDeliver dashboard' }
         ],
-        impactMetrics: [
-            ['Hot or cold', 'target temperature delivery'],
-            ['Improved', 'customer satisfaction'],
-            ['Consistent', 'temperature regulation']
-        ]
+        impact: 'The temperature regulation system helps improve customer satisfaction by ensuring food arrives at the intended hot or cold temperature.'
     }
 };
 
@@ -109,14 +93,7 @@ document.getElementById('project-gallery').innerHTML = (project.gallery || [])
     .map(image => `<img src="${image}" alt="${project.title} supporting screen">`)
     .join('');
 
-document.getElementById('project-impact-metrics').innerHTML = project.impactMetrics
-    .map(([value, label]) => `
-        <article class="project-impact-metric">
-            <strong>${value}</strong>
-            <span>${label}</span>
-        </article>
-    `)
-    .join('');
+document.getElementById('project-impact-content').textContent = project.impact;
 
 const projectHeroContent = document.getElementById('project-hero-content');
 const projectMediaPrevious = document.getElementById('project-media-previous');

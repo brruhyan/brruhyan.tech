@@ -197,47 +197,6 @@
     margin-top: 48px;
 }
 
-.project-impact > .project-story-label {
-    color: #a05e4c;
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-
-.project-impact-metrics {
-    display: grid;
-    gap: 14px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.project-impact-metric {
-    border: 1px solid var(--minimal-line);
-    border-radius: 8px;
-    display: grid;
-    gap: 0;
-    min-height: 0;
-    padding: 16px 20px 14px;
-}
-
-.project-impact-metric strong {
-    color: #241c19;
-    display: block;
-    font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(1.45rem, 2.4vw, 2.1rem);
-    font-weight: 400;
-    letter-spacing: -.045em;
-    line-height: .95;
-}
-
-.project-impact-metric span {
-    color: #8f6658;
-    display: block;
-    font-size: .72rem;
-    line-height: 1.2;
-    margin-top: 4px;
-    text-transform: uppercase;
-}
-
 @media (max-width: 768px) {
     .project-detail-page {
         margin-top: 28px;
@@ -289,10 +248,6 @@
     }
 
     .project-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .project-impact-metrics {
         grid-template-columns: 1fr;
     }
 }
