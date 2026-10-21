@@ -102,6 +102,59 @@
     width: 100%;
 }
 
+.project-hero-image img,
+.project-hero-image video {
+    display: block;
+    height: min(68vh, 680px);
+    object-fit: cover;
+    width: 100%;
+}
+
+.project-hero-image {
+    position: relative;
+}
+
+#project-hero-content {
+    opacity: 1;
+    transition: opacity 180ms ease;
+}
+
+#project-hero-content.project-media-is-changing {
+    opacity: 0;
+}
+
+.project-media-arrow {
+    align-items: center;
+    background: rgba(255, 253, 250, .9);
+    border: 0;
+    border-radius: 50%;
+    color: var(--minimal-ink);
+    cursor: pointer;
+    display: flex;
+    font-size: 1.3rem;
+    height: 42px;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 160ms ease, transform 160ms ease;
+    width: 42px;
+    z-index: 1;
+}
+
+.project-media-arrow:hover {
+    background: #fffdfa;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.project-media-arrow-left {
+    left: 20px;
+}
+
+.project-media-arrow-right {
+    right: 20px;
+}
+
 .project-story {
     display: grid;
     gap: 48px;
@@ -118,7 +171,11 @@
 }
 
 .project-story-label {
-    color: var(--minimal-ink);
+    color: #a05e4c;
+    font-family: 'DM Sans', sans-serif;
+    font-size: .72rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
 }
 
 .project-gallery {
@@ -134,6 +191,51 @@
     height: 280px;
     object-fit: cover;
     width: 100%;
+}
+
+.project-impact {
+    margin-top: 48px;
+}
+
+.project-impact > .project-story-label {
+    color: #a05e4c;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.project-impact-metrics {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-impact-metric {
+    border: 1px solid var(--minimal-line);
+    border-radius: 8px;
+    display: grid;
+    gap: 0;
+    min-height: 0;
+    padding: 16px 20px 14px;
+}
+
+.project-impact-metric strong {
+    color: #241c19;
+    display: block;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+    font-weight: 400;
+    letter-spacing: -.045em;
+    line-height: .95;
+}
+
+.project-impact-metric span {
+    color: #8f6658;
+    display: block;
+    font-size: .72rem;
+    line-height: 1.2;
+    margin-top: 4px;
+    text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
@@ -161,13 +263,36 @@
         min-height: 240px;
     }
 
+    .project-hero-image,
+    .project-hero-image img,
+    .project-hero-image video {
+        min-height: 58vw;
+        height: 58vw;
+    }
+
+    .project-media-arrow-left {
+        left: 12px;
+    }
+
+    .project-media-arrow-right {
+        right: 12px;
+    }
+
     .project-story {
         gap: 22px;
         grid-template-columns: 1fr;
         margin-top: 56px;
     }
 
+    .project-impact {
+        margin-top: 48px;
+    }
+
     .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-impact-metrics {
         grid-template-columns: 1fr;
     }
 }
