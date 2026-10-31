@@ -427,7 +427,7 @@ body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
     text-align: center;
     text-decoration: none;
     transform: translate(-50%, -50%) scale(.8);
-    transition: opacity 180ms ease, transform 180ms ease;
+    transition: opacity 90ms ease, transform 180ms ease;
     width: 92px;
 }
 

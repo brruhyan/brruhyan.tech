@@ -243,6 +243,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 link: 'project.html?project=shroomguard'
             }
         ];
+        let followAnimationFrame = null;
+        let followItem = null;
+        let followLink = null;
+        let followX = 0;
+        let followY = 0;
+        let targetX = 0;
+        let targetY = 0;
+
+        const animateShowcaseLink = () => {
+            followX += (targetX - followX) * 0.16;
+            followY += (targetY - followY) * 0.16;
+
+            if (followLink && followItem) {
+                followLink.style.left = `${followX}px`;
+                followLink.style.top = `${followY}px`;
+            }
+
+            if (Math.abs(targetX - followX) > 0.1 || Math.abs(targetY - followY) > 0.1) {
+                followAnimationFrame = requestAnimationFrame(animateShowcaseLink);
+            } else {
+                followAnimationFrame = null;
+            }
+        };
+
+        const moveShowcaseLink = (item, link, x, y, snap = false) => {
+            followItem = item;
+            followLink = link;
+            targetX = x;
+            targetY = y;
+
+            if (snap) {
+                followX = x;
+                followY = y;
+                link.style.left = `${x}px`;
+                link.style.top = `${y}px`;
+            }
+
+            if (followAnimationFrame === null) {
+                followAnimationFrame = requestAnimationFrame(animateShowcaseLink);
+            }
+        };
 
         const selectShowcaseProject = (index) => {
             const project = showcaseProjects[index];
@@ -271,8 +312,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     const itemRect = item.getBoundingClientRect();
                     item.classList.add('is-cursor-visible');
-                    projectLink.style.left = `${event.clientX - itemRect.left}px`;
-                    projectLink.style.top = `${event.clientY - itemRect.top}px`;
+                    moveShowcaseLink(
+                        item,
+                        projectLink,
+                        event.clientX - itemRect.left,
+                        event.clientY - itemRect.top,
+                        true
+                    );
                     projectLink.style.right = 'auto';
                     projectLink.style.bottom = 'auto';
                 });
@@ -314,8 +360,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!projectLink) return;
 
             hoveredItem.classList.add('is-cursor-visible');
-            projectLink.style.left = `${event.clientX - itemRect.left}px`;
-            projectLink.style.top = `${event.clientY - itemRect.top}px`;
+            moveShowcaseLink(
+                hoveredItem,
+                projectLink,
+                event.clientX - itemRect.left,
+                event.clientY - itemRect.top
+            );
             projectLink.style.right = 'auto';
             projectLink.style.bottom = 'auto';
         });
