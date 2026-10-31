@@ -297,6 +297,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 item.tabIndex = isActive ? 0 : -1;
             });
 
+            const selectedItem = showcaseItems[index];
+            const selectedLink = selectedItem.querySelector('.showcase-item-link');
+            if (selectedLink) {
+                selectedItem.classList.add('is-cursor-visible');
+                moveShowcaseLink(selectedItem, selectedLink, selectedItem.offsetWidth / 2, selectedItem.offsetHeight / 2, true);
+                selectedLink.style.right = 'auto';
+                selectedLink.style.bottom = 'auto';
+            }
+
             showcaseFeature.setAttribute('aria-labelledby', showcaseItems[index].id);
             showcaseImage.src = project.image;
             showcaseImage.alt = project.alt;
