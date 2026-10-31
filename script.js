@@ -350,7 +350,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const hoveredItem = event.target.closest('[data-showcase-item]');
 
             showcaseItems.forEach((item) => {
-                item.classList.remove('is-cursor-visible');
+                if (item !== hoveredItem) {
+                    item.classList.remove('is-cursor-visible');
+                }
             });
 
             if (!hoveredItem || !showcase.contains(hoveredItem) || !hoveredItem.classList.contains('is-active')) {

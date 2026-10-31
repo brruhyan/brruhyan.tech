@@ -431,10 +431,6 @@ body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
     width: 92px;
 }
 
-.showcase-item-link::before {
-    content: 'See more';
-}
-
 .showcase-item.is-active.is-cursor-visible .showcase-item-link {
     opacity: 1;
     pointer-events: auto;
