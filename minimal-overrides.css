@@ -425,6 +425,7 @@ body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
     position: absolute;
     right: 20px;
     text-align: center;
+    text-transform: none;
     text-decoration: none;
     transform: translate(-50%, -50%) scale(.8);
     transition: opacity 90ms ease, transform 180ms ease;
@@ -509,12 +510,16 @@ body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
         position: static;
         right: auto;
         text-align: left;
+        text-transform: none;
         transform: none;
         transition: color 180ms ease;
         width: auto;
     }
     .showcase-item.is-active .showcase-item-link {
         display: inline-flex;
+    }
+    .showcase-item.is-active.is-cursor-visible .showcase-item-link {
+        transform: none;
     }
     .showcase-feature { aspect-ratio: auto; height: 245px; max-height: 245px; min-height: 245px; }
     .showcase-feature-image { min-height: 245px; }
