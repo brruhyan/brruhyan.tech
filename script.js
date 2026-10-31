@@ -251,6 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showcaseItems.forEach((item, itemIndex) => {
                 const isActive = itemIndex === index;
                 item.classList.toggle('is-active', isActive);
+                item.classList.remove('is-cursor-visible');
                 item.setAttribute('aria-selected', String(isActive));
                 item.tabIndex = isActive ? 0 : -1;
             });
@@ -263,6 +264,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         showcaseItems.forEach((item, index) => {
             item.addEventListener('click', () => selectShowcaseProject(index));
+            const projectLink = item.querySelector('.showcase-item-link');
+            if (projectLink) {
+                projectLink.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                });
+            }
             item.addEventListener('keydown', (event) => {
                 if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
 
@@ -271,6 +278,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 const nextIndex = (index + direction + showcaseItems.length) % showcaseItems.length;
                 selectShowcaseProject(nextIndex);
                 showcaseItems[nextIndex].focus();
+            });
+        });
+
+        showcase.addEventListener('mousemove', (event) => {
+            const hoveredItem = event.target.closest('[data-showcase-item]');
+
+            showcaseItems.forEach((item) => {
+                item.classList.remove('is-cursor-visible');
+            });
+
+            if (!hoveredItem || !showcase.contains(hoveredItem) || !hoveredItem.classList.contains('is-active')) {
+                return;
+            }
+
+            const itemRect = hoveredItem.getBoundingClientRect();
+            const isInsideItem = event.clientX >= itemRect.left
+                && event.clientX <= itemRect.right
+                && event.clientY >= itemRect.top
+                && event.clientY <= itemRect.bottom;
+
+            if (!isInsideItem) return;
+
+            const projectLink = hoveredItem.querySelector('.showcase-item-link');
+            if (!projectLink) return;
+
+            hoveredItem.classList.add('is-cursor-visible');
+            projectLink.style.left = `${event.clientX - itemRect.left}px`;
+            projectLink.style.top = `${event.clientY - itemRect.top}px`;
+            projectLink.style.right = 'auto';
+            projectLink.style.bottom = 'auto';
+        });
+
+        showcase.addEventListener('mouseleave', () => {
+            showcaseItems.forEach((item) => {
+                item.classList.remove('is-cursor-visible');
             });
         });
 
