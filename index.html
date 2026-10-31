@@ -140,82 +140,27 @@
     <div class="works-intro-copy">
     </div>
   </div>
-  <div class="portfolio-container">
-
-    <!-- Project 1 - Content on left, Image on right -->
-    <div class="portfolio-item animate-project" style="animation-delay: 0.1s">
-      <div class="portfolio-content">
-        <div class="project-tags">
-          <span class="project-tag">Prometheus</span>
-          <span class="project-tag">Grafana</span>
-          <span class="project-tag">Docker</span>
-        </div>
-        <h3 class="project-title">Observability</h3>
-        <p class="project-description">
-          Self-hosted observability infrastructure using Prometheus and Grafana.
-        </p>
-        <a href="project.html?project=observability" class="project-link">See more</a>
-      </div>
-      <div class="portfolio-image">
-        <img src="./Images/observability.jpg" alt="Observability Dashboard" class="project-image">
-      </div>
+  <div class="showcase" data-showcase>
+    <div class="showcase-list" role="tablist" aria-label="Featured projects">
+      <button class="showcase-item is-active animate-project" type="button" role="tab" aria-selected="true" aria-controls="showcase-feature" id="showcase-tab-1" data-showcase-item="0">
+        <span class="showcase-item-title">Observability</span>
+        <span class="showcase-item-summary">Self-hosted monitoring that makes complex systems easier to understand.</span>
+      </button>
+      <button class="showcase-item animate-project" type="button" role="tab" aria-selected="false" aria-controls="showcase-feature" id="showcase-tab-2" data-showcase-item="1" tabindex="-1">
+        <span class="showcase-item-title">Sales CRM</span>
+        <span class="showcase-item-summary">A focused platform for tracking leads and performance across the sales pipeline.</span>
+      </button>
+      <button class="showcase-item animate-project" type="button" role="tab" aria-selected="false" aria-controls="showcase-feature" id="showcase-tab-3" data-showcase-item="2" tabindex="-1">
+        <span class="showcase-item-title">ShroomGuard</span>
+        <span class="showcase-item-summary">A deep learning model that helps growers identify harvest-ready mushrooms.</span>
+      </button>
     </div>
-    
-    <!-- Project 1 - Content on left, Image on right -->
-    <div class="portfolio-item animate-project" style="animation-delay: 0.1s">
-      <div class="portfolio-content">
-        <div class="project-tags">
-          <span class="project-tag">FilamentPHP</span>
-          <span class="project-tag">Laravel</span>
-          <span class="project-tag">Docker</span>
-        </div>
-        <h3 class="project-title">Sales CRM</h3>
-        <p class="project-description"> 
-          A sales tracking platform for managing leads and performance metrics.        </p>
-        <a href="project.html?project=channel-management" class="project-link">See more</a>
+    <article class="showcase-feature" id="showcase-feature" role="tabpanel" aria-labelledby="showcase-tab-1">
+      <div class="showcase-feature-image">
+        <img src="./Images/observability.jpg" alt="Observability Dashboard" class="project-image" data-showcase-image>
+        <span class="showcase-feature-index" data-showcase-year>01 / 03</span>
       </div>
-      <div class="portfolio-image">
-        <img src="./Images/channel.jpg" alt="Channel Management Platform" class="project-image">
-      </div>
-    </div>
-
-    <!-- Project 1 - Content on left, Image on right -->
-    <div class="portfolio-item animate-project" style="animation-delay: 0.1s">
-      <div class="portfolio-content">
-        <div class="project-tags">
-          <span class="project-tag">Deep Learning</span>
-          <span class="project-tag">Firebase</span>
-          <span class="project-tag">Amazon Web Services</span>
-        </div>
-        <h3 class="project-title">ShroomGuard</h3>
-        <p class="project-description">
-          A deep learning model that categorizes mushroom caps to improve harvesting.
-          </p>
-        <a href="project.html?project=shroomguard" class="project-link">See more</a>
-      </div>
-      <div class="portfolio-image">
-        <img src="./Images/ShroomGuard.png" alt="ShroomGuard project preview" class="project-image">
-      </div>
-    </div>
-
-    <!-- Project 2 - Content on left, Image on right -->
-    <div class="portfolio-item animate-project" style="animation-delay: 0.3s">
-      <div class="portfolio-content">
-        <div class="project-tags">
-          <span class="project-tag">Arduino</span>
-          <span class="project-tag">C++</span>
-          <span class="project-tag">Embedded Systems</span>
-        </div>
-        <h3 class="project-title">ThermoDeliver</h3>
-        <p class="project-description">
-          A device that maintains optimal food temperature during delivery using Proportional-Integral-Derivative.
-        </p>
-        <a href="project.html?project=thermodeliver" class="project-link">See more</a>
-      </div>
-      <div class="portfolio-image">
-        <img src="./Images/ThermoDeliver.png" alt="ThermoDeliver" class="project-image">
-      </div>
-    </div>
+    </article>
   </div>
 </section>
 
