@@ -266,6 +266,16 @@ document.addEventListener('DOMContentLoaded', function() {
             item.addEventListener('click', () => selectShowcaseProject(index));
             const projectLink = item.querySelector('.showcase-item-link');
             if (projectLink) {
+                item.addEventListener('mouseenter', (event) => {
+                    if (!item.classList.contains('is-active')) return;
+
+                    const itemRect = item.getBoundingClientRect();
+                    item.classList.add('is-cursor-visible');
+                    projectLink.style.left = `${event.clientX - itemRect.left}px`;
+                    projectLink.style.top = `${event.clientY - itemRect.top}px`;
+                    projectLink.style.right = 'auto';
+                    projectLink.style.bottom = 'auto';
+                });
                 projectLink.addEventListener('click', (event) => {
                     event.stopPropagation();
                 });
