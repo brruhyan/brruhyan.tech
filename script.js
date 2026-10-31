@@ -214,31 +214,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const showcase = document.querySelector('[data-showcase]');
     if (showcase) {
         const showcaseItems = Array.from(showcase.querySelectorAll('[data-showcase-item]'));
-        const showcaseImage = showcase.querySelector('[data-showcase-image]');
         const showcaseYear = showcase.querySelector('[data-showcase-year]');
         const showcaseFeature = showcase.querySelector('.showcase-feature');
         const showcaseProjects = [
             {
                 title: 'Observability',
                 description: 'Self-hosted observability infrastructure using Prometheus and Grafana.',
-                image: './Images/observability.jpg',
-                alt: 'Observability Dashboard',
                 tags: ['Prometheus', 'Grafana', 'Docker'],
                 link: 'project.html?project=observability'
             },
             {
                 title: 'Sales CRM',
                 description: 'A sales tracking platform for managing leads and performance metrics.',
-                image: './Images/channel.jpg',
-                alt: 'Channel Management Platform',
                 tags: ['FilamentPHP', 'Laravel', 'Docker'],
                 link: 'project.html?project=channel-management'
             },
             {
                 title: 'ShroomGuard',
                 description: 'A deep learning model that categorizes mushroom caps to improve harvesting.',
-                image: './Images/ShroomGuard.png',
-                alt: 'ShroomGuard project preview',
                 tags: ['Deep Learning', 'Firebase', 'Amazon Web Services'],
                 link: 'project.html?project=shroomguard'
             }
@@ -256,8 +249,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             showcaseFeature.setAttribute('aria-labelledby', showcaseItems[index].id);
-            showcaseImage.src = project.image;
-            showcaseImage.alt = project.alt;
             showcaseYear.textContent = `${String(index + 1).padStart(2, '0')} / ${showcaseProjects.length.toString().padStart(2, '0')}`;
         };
 
@@ -273,6 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 showcaseItems[nextIndex].focus();
             });
         });
+
     }
     
     // Project modal functionality

@@ -361,6 +361,32 @@ body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
     padding-left: 18px;
 }
 
+.showcase-item-tags {
+    color: #53657b;
+    display: flex;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .67rem;
+    gap: 0;
+    letter-spacing: .08em;
+    margin-bottom: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.showcase-item-tags span + span::before {
+    color: #ba988d;
+    content: ' / ';
+    padding: 0 4px;
+}
+
+.showcase-item.is-active .showcase-item-tags {
+    margin-bottom: 14px;
+    max-height: 24px;
+    opacity: 1;
+}
+
 .showcase-item:focus-visible {
     outline: 2px solid #9b5b4b;
     outline-offset: -2px;
@@ -389,7 +415,9 @@ body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
     border-radius: 5px;
     box-sizing: border-box;
     box-shadow: 0 2px 0 rgba(96, 61, 45, .08);
+    align-self: stretch;
     height: auto;
+    justify-self: stretch;
     min-height: 0;
     overflow: hidden;
     position: relative;
@@ -406,7 +434,6 @@ body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
     display: block;
     height: 100%;
     object-fit: cover;
-    transition: opacity 180ms ease, transform 500ms ease;
     width: 100%;
 }
 
@@ -435,7 +462,7 @@ body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
     .showcase-feature { order: 1; }
     .showcase-item { padding: 24px 0; }
     .showcase-item.is-active { padding-left: 14px; }
-    .showcase-feature { height: 245px; }
+    .showcase-feature { aspect-ratio: auto; height: 245px; max-height: 245px; min-height: 245px; }
     .showcase-feature-image { min-height: 245px; }
     .portfolio-container { gap: 22px; padding-top: 28px; }
     .portfolio-item { grid-template-columns: 1fr; }
