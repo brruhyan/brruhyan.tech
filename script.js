@@ -754,7 +754,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const group = testimonialTrack.querySelector('.testimonial-group');
             const distance = group ? group.getBoundingClientRect().width : 0;
-            const duration = parseFloat(window.getComputedStyle(testimonialTrack).animationDuration) || 18;
+            const duration = parseFloat(window.getComputedStyle(testimonialTrack).animationDuration) || 5;
             const position = getTrackPosition();
 
             if (distance > 0) {
