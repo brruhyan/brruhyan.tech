@@ -219,12 +219,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const showcaseFeature = showcase.querySelector('.showcase-feature');
         const showcaseProjects = [
             {
-                title: 'Observability',
-                description: 'Self-hosted observability infrastructure using Prometheus and Grafana.',
-                image: './Images/observability.jpg',
-                alt: 'Observability Dashboard',
-                tags: ['Prometheus', 'Grafana', 'Docker'],
-                link: 'project.html?project=observability'
+                title: 'ThermoDeliver',
+                description: 'A device that maintains optimal food temperature during delivery using PID.',
+                image: './Images/ThermoDeliver.png',
+                alt: 'ThermoDeliver project preview',
+                tags: ['Arduino', 'C++', 'Embedded Systems'],
+                link: 'project.html?project=thermodeliver'
             },
             {
                 title: 'Sales CRM',
