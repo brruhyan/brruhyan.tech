@@ -544,6 +544,133 @@ body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
     top: 16px;
 }
 
+.shipped-section {
+    margin: 0 auto 150px;
+    width: min(1080px, calc(100% - 84px));
+}
+
+.shipped-heading {
+    margin-bottom: 38px;
+}
+
+.shipped-heading h2 {
+    color: #241c19;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(3rem, 5vw, 4.7rem);
+    font-weight: 400;
+    letter-spacing: -.045em;
+    line-height: .92;
+    margin: 0;
+}
+
+.shipped-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.shipped-card {
+    background: #fffdfa;
+    border: 1px solid #d8cec4;
+    border-radius: 18px;
+    color: #241c19;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    text-decoration: none;
+    transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.shipped-card:hover {
+    box-shadow: 0 10px 24px rgba(96, 61, 45, .12);
+    transform: translateY(-3px);
+}
+
+.shipped-card-placeholder:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+.shipped-card-image {
+    aspect-ratio: 1.42;
+    background: #ece7e1;
+    overflow: hidden;
+}
+
+.shipped-card-image img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.shipped-card-placeholder .shipped-card-image {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.shipped-card-placeholder .shipped-card-image img {
+    height: 45%;
+    object-fit: contain;
+    width: 45%;
+}
+
+.shipped-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 18px 20px 20px;
+}
+
+.shipped-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.shipped-card-tags span {
+    color: #53657b;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .62rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.shipped-card-tags span + span::before {
+    color: #9b5b4b;
+    content: "/";
+    margin: 0 9px;
+}
+
+.shipped-card h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -.025em;
+    line-height: 1.05;
+    margin: 0 0 10px;
+}
+
+.shipped-card p {
+    color: #53657b;
+    font-size: .88rem;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.shipped-card-link {
+    color: #9b5b4b;
+    font-size: .78rem;
+    margin-top: auto;
+    padding-top: 28px;
+}
+
+.shipped-card-link span {
+    margin-left: 5px;
+}
+
 @media (max-width: 768px) {
     .portfolio-section { width: calc(100% - 40px); }
     .works-intro { gap: 28px; grid-template-columns: 1fr; padding-bottom: 24px; }
@@ -588,6 +715,11 @@ body.page-transition-out { animation: page-fade-out 280ms ease-in both; }
     .portfolio-image { border-left: 0; border-top: 1px solid #d8cec4; min-height: 245px; }
     .project-title { font-size: clamp(2.5rem, 12vw, 4rem); }
     .project-link { margin-top: 28px; }
+    .shipped-section { margin-bottom: 100px; width: calc(100% - 40px); }
+    .shipped-heading { margin-bottom: 28px; }
+    .shipped-heading h2 { font-size: clamp(3rem, 14vw, 4.2rem); }
+    .shipped-grid { grid-template-columns: 1fr; }
+    .shipped-card-image { aspect-ratio: 1.65; }
 }
 
 /* What-I-do section */
