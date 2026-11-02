@@ -729,4 +729,64 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 50);
         });
     });
+
+    // Let mobile visitors drag the testimonial carousel while retaining its automatic loop.
+    const testimonialTrack = document.querySelector('.testimonial-track');
+    if (testimonialTrack && window.matchMedia('(max-width: 768px)').matches) {
+        let dragStartX = 0;
+        let trackStartX = 0;
+        let activePointerId = null;
+        let isDragging = false;
+
+        const getTrackPosition = () => {
+            const transform = window.getComputedStyle(testimonialTrack).transform;
+            if (transform === 'none') return 0;
+            return new DOMMatrix(transform).m41;
+        };
+
+        const finishDrag = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            if (activePointerId !== null && testimonialTrack.hasPointerCapture(activePointerId)) {
+                testimonialTrack.releasePointerCapture(activePointerId);
+            }
+            activePointerId = null;
+
+            const group = testimonialTrack.querySelector('.testimonial-group');
+            const distance = group ? group.getBoundingClientRect().width : 0;
+            const duration = parseFloat(window.getComputedStyle(testimonialTrack).animationDuration) || 18;
+            const position = getTrackPosition();
+
+            if (distance > 0) {
+                const progress = ((-position % distance) + distance) % distance / distance;
+                testimonialTrack.style.animationDelay = `${-progress * duration}s`;
+            }
+
+            testimonialTrack.style.transform = '';
+            testimonialTrack.style.animationPlayState = 'running';
+            testimonialTrack.classList.remove('is-dragging');
+        };
+
+        testimonialTrack.addEventListener('pointerdown', (event) => {
+            if (event.pointerType === 'mouse' && event.button !== 0) return;
+            isDragging = true;
+            activePointerId = event.pointerId;
+            dragStartX = event.clientX;
+            trackStartX = getTrackPosition();
+            testimonialTrack.setPointerCapture(event.pointerId);
+            testimonialTrack.style.animationPlayState = 'paused';
+            testimonialTrack.style.transform = `translate3d(${trackStartX}px, 0, 0)`;
+            testimonialTrack.classList.add('is-dragging');
+        });
+
+        testimonialTrack.addEventListener('pointermove', (event) => {
+            if (!isDragging) return;
+            event.preventDefault();
+            const position = trackStartX + event.clientX - dragStartX;
+            testimonialTrack.style.transform = `translate3d(${position}px, 0, 0)`;
+        });
+
+        testimonialTrack.addEventListener('pointerup', finishDrag);
+        testimonialTrack.addEventListener('pointercancel', finishDrag);
+    }
 });
