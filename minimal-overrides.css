@@ -150,15 +150,18 @@ img, video { max-width: 100%; }
 .testimonial-track {
     animation: testimonial-scroll 38s linear infinite;
     display: flex;
+    max-width: none;
     width: max-content;
 }
 
 .testimonial-group {
     box-sizing: border-box;
     display: flex;
-    flex: 0 0 auto;
+    flex: 0 0 calc(394px + 394px + 394px + 394px + 88px);
     gap: 22px;
+    max-width: none;
     padding-right: 22px;
+    width: calc(394px + 394px + 394px + 394px + 88px);
 }
 
 .testimonial-card {
@@ -339,7 +342,13 @@ html[data-theme="dark"] .project-description {
         animation-duration: 5s;
         touch-action: pan-y;
     }
-    .testimonial-group { gap: 14px; padding-right: 14px; }
+    .testimonial-group {
+        flex-basis: min(1496px, calc(400vw - 136px));
+        gap: 14px;
+        max-width: none;
+        padding-right: 14px;
+        width: min(1496px, calc(400vw - 136px));
+    }
     .testimonial-card {
         flex-basis: min(calc(100vw - 48px), 360px);
         min-height: 250px;
