@@ -2,6 +2,41 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Portfolio website loaded successfully');
 
+    // Persist the selected color theme across page loads.
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeStorageKey = 'portfolio-theme';
+    const applyTheme = (theme) => {
+        const isDark = theme === 'dark';
+        document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+        if (themeToggle) {
+            themeToggle.setAttribute('aria-pressed', String(isDark));
+            themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            const label = themeToggle.querySelector('.theme-toggle-label');
+            if (label) label.textContent = isDark ? 'light mode' : 'dark mode';
+        }
+    };
+
+    let savedTheme = 'light';
+    try {
+        const storedTheme = window.localStorage.getItem(themeStorageKey);
+        if (storedTheme === 'dark' || storedTheme === 'light') savedTheme = storedTheme;
+    } catch (error) {
+        console.warn('Unable to read the saved color theme.', error);
+    }
+    applyTheme(savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            try {
+                window.localStorage.setItem(themeStorageKey, nextTheme);
+            } catch (error) {
+                console.warn('Unable to save the selected color theme.', error);
+            }
+        });
+    }
+
     if (window.location.hash === '#works') {
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {

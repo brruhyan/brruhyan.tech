@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Document metadata, social sharing information, responsive viewport settings,
+         external typography, visual stylesheets, and deferred page behavior. -->
     <meta charset="UTF-8">
     <meta property="og:title" content="Bryan Paul de Leon | Portfolio">
     <meta property="og:image" content="Images/thumbnail.jpg">
@@ -17,22 +19,30 @@
     <script src="script.js" defer></script>
 </head>
 <body> 
-<div class="header">
-  <div class="header-left">brruhyan.tech</div>
-  <div class="header-right">
+<!-- Keyboard users can bypass repeated navigation and move directly to the page content. -->
+<a class="skip-link" href="#main-content">Skip to content</a>
+<!-- Site-wide header containing the home link and the primary page navigation. -->
+<header class="header">
+  <a class="header-left" href="/" aria-label="brruhyan.tech home">brruhyan.tech</a>
+  <nav class="header-right" aria-label="Primary navigation">
     <a href="#about">about</a>
     <a href="#works">works</a>
     <a href="resume.html">resume</a>
-  </div>
-</div>
+    <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+      <span class="theme-toggle-label">dark mode</span>
+    </button>
+  </nav>
+</header>
 
-<!-- Hero Section -->
-<section class="hero-section custom-hero">
+<!-- Main landmark containing all portfolio content between the header and contact footer. -->
+<main id="main-content">
+<!-- Introductory hero landmark: establishes the portfolio identity and primary message. -->
+<section class="hero-section custom-hero" aria-labelledby="hero-title">
   <div class="hero-spacer"></div>
   <div class="hero-main">
     <div class="hero-tagline">Platform Engineer / based in the Philippines</div>
     <div class="hero-headline">
-      <h1 class="hero-giant-text">I make complex systems<br><em>feel simple.</em></h1>
+      <h1 id="hero-title" class="hero-giant-text">I make complex systems<br><em>feel simple.</em></h1>
     </div>
   </div>
   <div class="hero-bottom-bar">
@@ -41,9 +51,10 @@
   </div>
 </section>
 
-<!-- Technologies Section (scroll to see) -->
-<section class="technologies-section animate-section" id="about">
-  <div class="technologies-title animate-title"> Technologies I work with</div>
+<!-- About/technology landmark: lists the tools used in the author's work.
+     The repeated logo set allows the visual logo strip to loop continuously. -->
+<section class="technologies-section animate-section" id="about" aria-labelledby="technologies-title">
+  <h2 id="technologies-title" class="technologies-title animate-title">Technologies I work with</h2>
   <div class="technologies-logos">
     <div class="logos-scroll">
       <img class="technology-logo-img animate-logo" src="./Images/laravel-logo.png" alt="Laravel" style="animation-delay: 0.1s">
@@ -57,7 +68,7 @@
       <img class="technology-logo-img animate-logo" src="./Images/gitlab-logo-500-rgb.png" alt="GitLab" style="animation-delay: 0.5s">
 
 
-      <!-- Duplicate for seamless loop -->
+      <!-- Decorative duplicate logo set used only to create a seamless scrolling loop. -->
       <img class="technology-logo-img animate-logo" src="./Images/laravel-logo.png" alt="Laravel">
       <img class="technology-logo-img animate-logo" src="./Images/Docker.png" alt="Docker">
       <img class="technology-logo-img animate-logo" src="./Images/amazon_logo.png" alt="AWS">
@@ -73,8 +84,8 @@
   </div>
 </section>
 
-<!-- Experiences Section -->
-<section class="experiences-section animate-section">
+<!-- Experience landmark: combines a short service overview with the author's work history. -->
+<section class="experiences-section animate-section" aria-labelledby="experience-title">
   <div class="what-i-do">
     <div class="what-i-do-intro">
       <span class="what-i-do-kicker">At a glance</span>
@@ -130,7 +141,8 @@
   </div>
 </section>
 
-<!-- Portfolio Section -->
+<!-- Featured work landmark: the tablist selects one project at a time,
+     while the adjacent tabpanel presents the selected project's image. -->
 <section class="portfolio-section animate-section" id="works">
   <div class="works-intro">
     <div class="works-intro-title">
@@ -176,7 +188,8 @@
   </div>
 </section>
 
-<!-- Additional Work Section -->
+<!-- Additional work landmark: presents supporting projects as independent cards
+     after the primary showcase. Linked cards are actionable; placeholder cards are not. -->
 <section class="shipped-section animate-section" aria-labelledby="shipped-title">
   <div class="shipped-heading">
     <span class="works-kicker">More work</span>
@@ -219,8 +232,10 @@
   </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="gallery-section animate-section">
+<!-- Testimonial landmark: contains a horizontally scrolling set of quotes.
+     The first group is accessible content; the following groups are aria-hidden
+     visual duplicates used to keep the animation continuous. -->
+<section class="gallery-section animate-section" aria-labelledby="testimonial-title">
   <div class="testimonial-section" aria-labelledby="testimonial-title">
     <h2 id="testimonial-title">Words from people I've worked with.</h2>
     <div class="testimonial-window">
@@ -320,6 +335,8 @@
   </div>
 </section>
 
+<!-- At-a-glance dialog: JavaScript fills this dialog with details for the
+     automation, containerized workflow, and embedded systems links above. -->
 <div id="glance-modal" class="glance-modal" aria-hidden="true">
   <div class="glance-modal-content" role="dialog" aria-modal="true" aria-labelledby="glance-modal-title">
     <button class="glance-modal-close" type="button" aria-label="Close detail">&times;</button>
@@ -332,12 +349,13 @@
   </div>
 </div>
 
-<!-- Project Detail Modal -->
+<!-- Project detail dialog: contains one panel per project. JavaScript reveals
+     the selected panel, controls the image gallery, and manages dialog visibility. -->
 <div id="project-modal" class="project-modal">
   <div class="modal-content animate-modal">
     <button class="modal-close animate-close">&times;</button>
 
-    <!-- ShroomGuard Details -->
+    <!-- ShroomGuard project panel, including its gallery, summary, role, and metrics. -->
     <div id="shroomguard-details" class="project-details">
       <div class="modal-layout">
         <div class="modal-image-section animate-modal-image">
@@ -345,7 +363,7 @@
             <button class="gallery-nav gallery-prev" onclick="changeImage('shroomguard', -1)">&#8249;</button>
             <div class="gallery-container">
               <img src="./Images/ShroomGuard.png" alt="ShroomGuard" class="modal-project-image gallery-image active">
-              <!-- Add more images here - replace with actual image paths -->
+              <!-- Additional project media can be inserted here as gallery items. -->
               <img src="./Images/shroom_deploy.jpg" alt="ShroomGuard Screen 2" class="modal-project-image gallery-image">
               <video src="./Images/shroom_demo.mp4" alt="ShroomGuard Demo Video" class="modal-project-image gallery-image" controls muted autoplay loop>
                 Your browser does not support the video tag.
@@ -393,7 +411,7 @@
       </div>
     </div>
 
-    <!-- Observability Details -->
+    <!-- Observability project panel and its single dashboard preview. -->
     <div id="observability-details" class="project-details">
       <div class="modal-layout">
         <div class="modal-image-section animate-modal-image">
@@ -432,7 +450,8 @@
       </div>
     </div>
     
-    <!-- Channel Management Platform Details -->
+    <!-- Sales CRM project panel, retained under its historical channel-management ID
+         so existing JavaScript links and project data continue to work. -->
     <div id="channel-management-details" class="project-details">
       <div class="modal-layout">
         <div class="modal-image-section animate-modal-image">
@@ -440,7 +459,7 @@
             <button class="gallery-nav gallery-prev" onclick="changeImage('channel-management', -1)">&#8249;</button>
             <div class="gallery-container">
               <img src="./Images/channel.jpg" alt="Channel Management Platform" class="modal-project-image gallery-image active">
-              <!-- Add more images here - replace with actual image paths -->
+              <!-- Additional project media can be inserted here as gallery items. -->
             </div>
             <button class="gallery-nav gallery-next" onclick="changeImage('channel-management', 1)">&#8250;</button>
           </div>
@@ -483,7 +502,7 @@
       </div>
     </div>
     
-    <!-- ThermoDeliver Details -->
+    <!-- ThermoDeliver project panel, including hardware previews and project metadata. -->
     <div id="thermodeliver-details" class="project-details">
       <div class="modal-layout">
         <div class="modal-image-section animate-modal-image">
@@ -536,7 +555,8 @@
       </div>
     </div>
     
-    <!-- Extracurriculars Details -->
+    <!-- Extracurriculars project panel for activities and achievements outside
+         the primary professional project list. -->
     <div id="extracurriculars-details" class="project-details">
       <div class="modal-layout">
         <div class="modal-image-section animate-modal-image">
@@ -592,8 +612,10 @@
   </div>
 </div>
 
-<!-- Contact Section -->
-<section class="contact-section animate-section">
+<!-- Footer/contact landmark: closes the page with a call to action and external
+     professional profile links. -->
+</main>
+<footer class="contact-section animate-section">
     <div class="contact-container">
         <div class="contact-left">  
             <h2 class="contact-title">Ready to create? Get in touch.</h2>
@@ -613,6 +635,6 @@
             </a>
         </div>
     </div>
-</section>
+</footer>
 </body>
 </html>
